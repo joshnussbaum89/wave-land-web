@@ -1,0 +1,44 @@
+<div id="desktop-nav" class="desktop-nav">
+  <ul>
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/#contact">Contact</a></li>
+    <!-- <li><a href="/blog">Blog</a></li> -->
+  </ul>
+</div>
+
+<style>
+  .desktop-nav {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .desktop-nav {
+      display: block;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .desktop-nav ul {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .desktop-nav li {
+      font-size: var(--size-medium);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .desktop-nav li a {
+      transition: all var(--transition-normal);
+    }
+
+    .desktop-nav li a:hover {
+      color: var(--color-purple);
+    }
+  }
+</style>

@@ -1,0 +1,157 @@
+---
+import AnimatedCta from '../../Animations/GlowingCta.astro'
+import SectionHeader from '../../Layout/SectionHeader.astro'
+import CurvedText from '../../Icons/CurvedText.astro'
+import joshWoods from '/josh-woods.webp'
+import JoshCta from '../../Buttons/JoshCta.astro'
+---
+
+<section id="about" class="about">
+  <SectionHeader text="Who Is Wave Land Web?" />
+  <div class="bio">
+    <p>
+      Hey! I'm Josh. I've always been a dreamer with a hunger to create things. I spent my life
+      playing guitar, recording records, and performing with my friends. These formative years
+      exploring my musical and artistic voice inexplicably led me to the vast, terrifying beauty
+      that is the modern web, and learning to build things with code.
+    </p>
+    <p>
+      Wave Land Web came about after a couple of big life changes for myself and my wife. In late
+      December 2020, we moved from our home in Philadelphia, PA to Madison, WI and I took a little
+      sabbatical from my music career to scratch an itch I had for web development.
+    </p>
+    <p>
+      After a few years of working with some amazing clients and building tons of personal projects,
+      I started to realize that many people struggle with decision fatigue when they have website
+      needs, and finding the right resources to build their own websites can be overwhelming. I
+      created Wave Land Web to simplify this process and to empower creatives and small businesses
+      with the resources and knowledge necessary to thrive online and create websites that bring
+      their brand and personality to life.
+    </p>
+    <p>
+      Wave Land Web allows me to empower the communities that I love with the tools and education
+      they need to succeed. With code, it's possible to make almost anything, so the challenge is
+      building unique, thoughtfully branded websites that feel intuitive and accessible to a diverse
+      audience. My goal is to help musicians, artists, and small businesses achieve their
+      professional dreams by building custom-coded web experiences that support their vision and
+      inspire creativity, all while prioritizing user experience.
+    </p>
+    <p>
+      <strong
+        >Click the link below to schedule a free 15-minute consultation and find out all the ways
+        Wave Land Web can help you achieve your goals. Thanks for stopping by!</strong
+      >
+    </p>
+    <JoshCta
+      text="Schedule a Call"
+      url="https://calendly.com/joshnussbaum89/15min"
+      openInNewTab={true}
+      class="cta"
+    />
+  </div>
+  <div class="container">
+    <CurvedText />
+    <img
+      src={joshWoods}
+      alt="Josh Nussbaum on a tree stump on a hiking trail"
+      width="628"
+      height="742"
+      loading="lazy"
+    />
+    <div class="container-info">
+      <AnimatedCta text="Get in touch" url="/#contact" />
+      <h3>Currently Using</h3>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript / TypeScript</li>
+        <li>React</li>
+        <li>Next.js</li>
+        <li>Astro (this site)</li>
+        <li>Sanity CMS</li>
+        <li>Figma</li>
+      </ul>
+    </div>
+  </div>
+
+  <style>
+    .about {
+      text-align: center;
+    }
+
+    .bio {
+      max-width: 750px;
+      margin: 0 auto 2rem;
+      font-size: var(--size-extra-small);
+      line-height: 1.5rem;
+    }
+
+    .bio p {
+      margin-bottom: 1rem;
+    }
+
+    .bio p a {
+      text-decoration: underline;
+      color: var(--color-purple);
+      transition: all var(--transition-normal);
+    }
+
+    .bio p a:hover {
+      opacity: var(--hover-opacity-link);
+    }
+
+    .bio .cta {
+      margin: 2rem auto;
+    }
+
+    @media (min-width: 768px) {
+      .bio .cta {
+        margin: 2rem auto 4rem;
+      }
+    }
+
+    .container {
+      display: grid;
+      gap: 6rem;
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    .container img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .container-info {
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .container-info h3 {
+      margin-bottom: 1rem;
+      font-size: var(--size-medium);
+      text-transform: uppercase;
+    }
+
+    .container-info ul {
+      font-size: var(--size-extra-small);
+      line-height: 1.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .container-info ul {
+        text-align: left;
+      }
+    }
+  </style>
+</section>

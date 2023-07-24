@@ -1,0 +1,114 @@
+---
+import SectionHeader from '../../Layout/SectionHeader.astro'
+---
+
+<section id="contact" class="contact">
+  <div class="contact-container">
+    <SectionHeader text="Contact Me" />
+    <p>Have something you are looking to build? Let's make it ✨</p>
+    <form method="POST" class="form" name="contactForm" action="/success" data-netlify="true">
+      <label for="name">Name: <span>*</span></label>
+      <input id="name" type="text" name="name" placeholder="Name" required />
+      <label for="email">Email: <span>*</span></label>
+      <input id="email" type="email" name="email" placeholder="Email" required />
+      <label for="message">Message: <span>*</span></label>
+      <textarea
+        id="message"
+        name="message"
+        cols="30"
+        rows="5"
+        placeholder="Write your message"
+        required></textarea>
+      <button class="josh-cta" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .contact-container {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+  }
+
+  .contact-container h2 {
+    margin-bottom: 1rem;
+  }
+
+  .contact-container > p {
+    display: block;
+    max-width: 410px;
+    margin: 0 auto 2rem;
+    font-size: var(--size-small);
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .contact-container > p {
+      max-width: 480px;
+      font-size: var(--size-medium);
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7rem;
+    font-size: var(--size-small);
+  }
+
+  @media (min-width: 768px) {
+    .form {
+      margin-bottom: 6rem;
+    }
+  }
+
+  .form label,
+  .form input,
+  .form textarea {
+    font-size: var(--size-small);
+  }
+
+  .form label,
+  .form input,
+  .form textarea {
+    border-radius: 5px;
+  }
+
+  .form label {
+    margin-bottom: 0.25rem;
+  }
+
+  .form label span {
+    color: var(--color-red);
+  }
+
+  .form input,
+  .form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 2px solid var(--color-black);
+    background: var(--color-white);
+  }
+
+  .form input::placeholder,
+  .form textarea::placeholder {
+    color: var(--color-grey-text);
+  }
+
+  .form textarea {
+    margin-bottom: 2rem;
+  }
+
+  .form button {
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: var(--size-small);
+  }
+
+  @media (min-width: 768px) {
+    .form button {
+      font-size: var(--size-medium);
+    }
+  }
+</style>

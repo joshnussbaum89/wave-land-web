@@ -1,0 +1,49 @@
+<a class="logo" href="/" title="Wave Land Web">
+  <svg
+    width="662"
+    height="500"
+    viewBox="0 0 662 500"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="331" cy="250" r="240" stroke="#1E1E1E" stroke-width="15" stroke-linecap="round"
+    ></circle>
+    <path
+      d="M11 251.73C82.5 217.37 213.095 225.773 337.048 251.706C448.5 275.025 576.5 278.871 651 251.729"
+      stroke="#1E1E1E"
+      stroke-width="15"
+      stroke-linecap="round"></path>
+  </svg>
+</a>
+
+<style>
+  .logo {
+    position: relative;
+    z-index: 3;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .logo {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+  .logo svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo svg circle,
+  .logo svg path {
+    transition: all var(--transition-normal);
+  }
+
+  .logo svg:hover path,
+  .logo svg:hover circle {
+    stroke: var(--color-purple);
+    stroke-width: 20px;
+  }
+</style>

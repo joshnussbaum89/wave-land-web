@@ -1,0 +1,27 @@
+---
+export interface Props {
+  text: string
+  url: string
+  class?: string
+  openInNewTab?: boolean
+}
+
+const { text, url, class: className, openInNewTab } = Astro.props
+const target = openInNewTab ? '_blank' : null
+const rel = openInNewTab ? 'noopener noreferrer' : null
+---
+
+<a class={`${className} josh-cta`} href={url} target={target} rel={rel}>{text}</a>
+
+<style>
+  a {
+    padding: 1rem;
+    font-size: var(--size-small);
+  }
+
+  @media (min-width: 768px) {
+    a {
+      font-size: var(--size-medium);
+    }
+  }
+</style>

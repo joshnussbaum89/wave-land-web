@@ -1,0 +1,500 @@
+---
+import SectionHeader from '../../Layout/SectionHeader.astro'
+import Circle from '../../Layout/Circle.astro'
+import Arrow from '../../Icons/Arrow.astro'
+import Dots from '../../Icons/Dots.astro'
+import Close from '../../Icons/Close.astro'
+
+// Moonbelly Makes
+import moonbellyMainImage from '/moonbelly.webp'
+import moonbellyMacbookImage from '/macbook-moonbelly.png'
+import moonbellyIphoneImage from '/iphone-moonbelly.png'
+
+// Supervoid TV
+import supervoidMainImage from '/supervoid.webp'
+import supervoidMacbookImage from '/macbook-supervoid.png'
+import supervoidIphoneImage from '/iphone-supervoid.png'
+
+// Robby Webb
+import robbyWebbMainImage from '/robby-webb.webp'
+import robbyWebbMacbookImage from '/macbook-robby-webb.png'
+import robbyWebbIphoneImage from '/iphone-robby-webb.png'
+
+// Style Guide Images
+import moonbellyStyleGuideImage from '/moonbelly-style-guide.png'
+import supervoidStyleGuideImage from '/supervoid-style-guide.png'
+import robbyWebbStyleGuideImage from '/robby-webb-style-guide.png'
+
+const projects = [
+  {
+    id: 1,
+    title: 'Moonbelly Makes',
+    description: 'Website build for Moonbelly Makes, a DIY and recipe blog by Katrina Atkin.',
+    mainImage: moonbellyMainImage,
+    alt: 'Moonbelly Makes website screenshot showing post preview cards',
+    technologies: ['React', 'Next.js', 'TypeScript', 'Sanity CMS'],
+    liveSite: 'https://moonbellymakes.com',
+    github: 'https://github.com/joshnussbaum89/moonbelly-makes',
+    caseStudy: [
+      {
+        title: 'Introduction',
+        description:
+          'Moonbelly Makes is a DIY and recipe blog built for content generation and user engagement. Katrina, the owner of Moonbelly Makes, uses this site as the main hub for her business. With this site, she is able to build her brand, share the incredible projects that she builds from scratch on her blog, and connect with her audience by linking to YouTube and social media',
+        image: moonbellyMacbookImage,
+      },
+      {
+        title: 'Project Objectives',
+        description:
+          'Our primary goal in working with Moonbelly Makes was to build a user-friendly website that would allow them to find their voice as a content creator and share their creativity with the world. In addition to being fully responsive and accessible on all devices, the site needed to be easy to navigate and allow users to easily find the content they are looking for. Content would be updated frequently via blog posts, so Moonbelly would need a content management system (CMS) to handle updates.',
+        image: moonbellyIphoneImage,
+      },
+      {
+        title: 'Key Features and Solutions',
+        description:
+          "Moonbelly Makes is powered by Sanity CMS on the backend. This is an free and open-source service that allows clients to create content, pages, blog posts and more without having to write any code. With Sanity, we were able build a completely custom, headless blog website that features search functionality, dynamic content, and a commenting engine that allows users to comment on blog posts which improves user engagement and SEO. Moonbelly also needed their site to be fast. This is why we chose to use Next.js as the frontend framework. Next.js is a React framework that allows us to build static sites that are fast and SEO friendly. All styling is custom CSS tailored to Moonbelly's exact specifications and branding.",
+        image: moonbellyStyleGuideImage,
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Supervoid TV',
+    description:
+      'Website build for Supervoid TV, Philadelphia studio specializing in music videos, stage visuals, documentaries and more.',
+    mainImage: supervoidMainImage,
+    alt: 'Supervoid TV website screenshot with a black background and white text',
+    technologies: ['React', 'Next.js'],
+    liveSite: 'https://supervoid.tv',
+    github: 'https://github.com/joshnussbaum89/supervoid-next',
+    caseStudy: [
+      {
+        title: 'Introduction',
+        description:
+          'Supervoid TV is a Philadelphia-based creative team specializing in stage visuals and music videos. Working with clients such as Rage Against the Machine, The Disco Biscuits, Spiritbox, and more, it was important for Supervoid to have a website that showcases the stunning visual work they do and the services they provide. Wave Land Web was able to provide all of this and more with a fully responsive and accessible website that is fast and SEO-friendly.',
+        image: supervoidMacbookImage,
+      },
+      {
+        title: 'Project Objectives',
+        description:
+          "Working with Supervoid involved a lot of discussion around what sensory experience we wanted to create for the user. We wanted to create a site that was visually stunning, fully immersive, and allowed for easy portfolio updates as they continue to work with new clients. In addition to Supervoid's portfolio of visual work, it was also important to showcase other business offerings and services in a way that illustrates the Supervoid brand and guides the user to the information they are looking for.",
+        image: supervoidIphoneImage,
+      },
+      {
+        title: 'Key Features and Solutions',
+        description:
+          "For maximum immersion, we decided to display GIFs of Supervoid's work on the homepage in an explosive display of color and movement. We host all GIFs on Vimeo and access them with the very handy, Vimeo API. This allows us to display homepage GIFs without sacrificing load times or performance. Services sections utilize catchy visuals and animations to draw the user's eye to relevant or important information. This site is built with Next.js and is fully responsive and accessible on all devices. All styling is custom CSS tailored to Supervoid's exact specifications and branding.",
+        image: supervoidStyleGuideImage,
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: 'Robby Webb',
+    description: 'Website build for Robby Webb, Philadelphia producer, drummer and engineer.',
+    mainImage: robbyWebbMainImage,
+    alt: 'Robby Webb website screenshot with a black background and white text',
+    technologies: ['React', 'Next.js', 'Styled Components'],
+    liveSite: 'https://robbywebb.com',
+    github: 'https://github.com/joshnussbaum89/robby-webb',
+    caseStudy: [
+      {
+        title: 'Introduction',
+        description:
+          "Robby Webb, a Philadelphia music producer, drummer, and engineer, collaborated with Wave Land Web to showcase his discography and provide a platform for his audience to connect with him. Robby's site features a fully responsive and accessible design that is fast and SEO-friendly.",
+        image: robbyWebbMacbookImage,
+      },
+      {
+        title: 'Project Objectives',
+        description:
+          'Robby is an amazing engineer with an impressive portfolio of albums to his name. He needed a website that would allow him to keep his audience up to date with all of his latest projects, and provide a straightforward way for potential clients to get in touch with him. It was also important to Robby that his site be fast and SEO-friendly so that he could be easily found by potential clients and collaborators.',
+        image: robbyWebbIphoneImage,
+      },
+      {
+        title: 'Key Features and Solutions',
+        description:
+          "Robby's site is built with Next.js and is fully responsive and accessible on all devices. All styling, including the site logo, is custom CSS tailored to Robby's exact specifications and branding. This website features a discography page that showcases Robby's previous work, designated pages for each album he has worked on, and a contact page that allows users to easily get in touch with him.",
+        image: robbyWebbStyleGuideImage,
+      },
+    ],
+  },
+]
+---
+
+<section id="work" class="work">
+  <div>
+    <SectionHeader text="Featured Work" />
+    <div class="work-circle desktop">
+      <a href="/#faq">
+        <Circle />
+        <p><em>Find answers to common questions about building with Wave Land Web</em></p>
+        <Arrow />
+      </a>
+    </div>
+  </div>
+  <div class="project-cards">
+    {
+      projects.map((project) => {
+        return (
+          <article class="card">
+            <span>0{`${project.id}`}</span>
+            <h3>{project.title}</h3>
+            <div class="card-image-container">
+              <img
+                src={project.mainImage}
+                alt={project.alt}
+                width="3008"
+                height="1720"
+                loading="lazy"
+              />
+              <button class="josh-cta" data-project-id={project.id}>
+                Learn More
+              </button>
+              <div class="scrim" />
+            </div>
+          </article>
+        )
+      })
+    }
+  </div>
+  <div class="work-circle mobile">
+    <a href="/#faq">
+      <Circle />
+      <p><em>Find answers to common questions about building with Wave Land Web</em></p>
+      <Arrow />
+    </a>
+  </div>
+  {
+    projects.map((project) => {
+      return (
+        <div class="modal" data-project-id={project.id}>
+          <div class="modal-content">
+            <h2>{project.title}</h2>
+            {project.caseStudy.map((section) => {
+              return (
+                <div class="modal-section">
+                  <img
+                    src={section.image}
+                    alt={project.alt}
+                    width="1132"
+                    height="604"
+                    loading="lazy"
+                  />
+                  <div class="modal-info">
+                    <h3>{section.title}</h3>
+                    <p>{section.description}</p>
+                    <Dots />
+                  </div>
+                </div>
+              )
+            })}
+            <div class="modal-buttons">
+              <a class="josh-cta" href={project.liveSite} target="_blank" rel="noopener noreferrer">
+                Live Site
+              </a>
+              <a class="josh-cta" href={project.github} target="_blank" rel="noopener noreferrer">
+                Code
+              </a>
+            </div>
+          </div>
+          <Close />
+        </div>
+      )
+    })
+  }
+</section>
+
+<style>
+  .work {
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .work {
+      display: grid;
+      grid-template-columns: 275px 1fr;
+      gap: 10vw;
+    }
+  }
+
+  .work h2 {
+    margin-bottom: 2rem;
+    font-size: var(--size-extra-large);
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    .work h2 {
+      font-size: var(--size-mega-large);
+    }
+  }
+
+  .work-circle {
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .work-circle.mobile {
+      display: none;
+    }
+  }
+
+  .work-circle.desktop {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .work-circle.desktop {
+      display: block;
+    }
+  }
+
+  .work-circle p {
+    margin: 0 auto 2rem;
+    max-width: 250px;
+  }
+
+  .project-cards {
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .project-cards {
+      margin-bottom: 0;
+    }
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .card {
+      max-width: 400px;
+    }
+
+    .card:nth-of-type(2) {
+      margin-left: auto;
+    }
+  }
+
+  .card span {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: var(--size-extra-large);
+    color: var(--color-purple);
+  }
+
+  .card h3 {
+    margin-bottom: 1rem;
+    font-size: var(--size-medium);
+  }
+
+  .card-image-container {
+    position: relative;
+    border: 2px solid var(--color-black);
+    border-radius: 10px;
+    --card-child-border-radius: calc(10px - 2px);
+  }
+
+  .card-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--card-child-border-radius);
+    box-shadow: var(--box-shadow-light);
+  }
+
+  .card-image-container button {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.75rem;
+    color: var(--color-black);
+    background-color: var(--color-light-purple);
+    font-size: var(--size-extra-small);
+    border: none;
+    box-shadow: none;
+    opacity: 0;
+    transition: all var(--transition-normal);
+  }
+
+  .card-image-container:hover button {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .card-image-container button:hover,
+  .modal-buttons a:hover {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    box-shadow: none;
+  }
+
+  .card-image-container .scrim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black);
+    opacity: 0;
+    transition: all var(--transition-normal);
+    box-shadow: var(--box-shadow-dark);
+    border-radius: var(--card-child-border-radius);
+  }
+
+  .card-image-container:hover .scrim {
+    opacity: 0.4;
+  }
+
+  /* Case study modal styles */
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 95%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: all var(--transition-normal);
+  }
+
+  .modal.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+  }
+
+  .modal-content {
+    height: calc(100vh - 10rem);
+    padding: 5rem 2rem;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    overflow-y: auto;
+  }
+
+  .modal-content h2 {
+    margin: 0 auto 4rem;
+    font-size: var(--size-extra-large);
+    text-transform: none;
+    text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    .modal-content h2 {
+      font-size: var(--size-mega-large);
+    }
+  }
+
+  .modal-section {
+    margin-bottom: 6rem;
+  }
+
+  @media (min-width: 1024px) {
+    .modal-section {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+    }
+
+    .modal-section:nth-of-type(2) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .modal-section img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: block;
+    margin: 0 auto 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .modal-section img {
+      width: 50%;
+    }
+  }
+
+  .modal-section:nth-of-type(1) img {
+    margin-bottom: 0;
+  }
+
+  .modal-info {
+    text-align: center;
+  }
+
+  .modal-info h3 {
+    margin-bottom: 2rem;
+    font-size: var(--size-large);
+  }
+
+  .modal-info p {
+    margin-bottom: 2rem;
+    font-size: var(--size-extra-small);
+    line-height: 1.5rem;
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .modal-buttons {
+      gap: 2rem;
+    }
+  }
+
+  .modal-buttons a {
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 100px;
+    text-align: center;
+    font-size: var(--size-extra-small);
+    color: var(--color-black);
+    background-color: var(--color-light-purple);
+    border: none;
+    transition: all var(--transition-normal);
+  }
+</style>
+
+<script>
+  const body = document.querySelector('body') as HTMLElement
+  const learnMoreCtas = [...document.querySelectorAll('.card .josh-cta')] as HTMLButtonElement[]
+  const closeButtons = [...document.querySelectorAll('.close')] as HTMLButtonElement[]
+
+  /**
+   * Prevent scrolling on body, and show modal that was clicked
+   * @param event
+   */
+  function showModal(event: MouseEvent) {
+    const id = (event.target as HTMLElement).getAttribute('data-project-id')
+    const modal = document.querySelector(`.modal[data-project-id="${id}"]`) as HTMLElement
+
+    body.setAttribute('data-overlay-displayed', 'true')
+    modal.classList.toggle('active')
+  }
+
+  /**
+   * Allow scrolling on body, and hide modal that was clicked
+   * @param event
+   */
+  function hideModal(event: MouseEvent) {
+    const modal = (event.target as HTMLElement).closest('.modal') as HTMLElement
+
+    body.setAttribute('data-overlay-displayed', 'false')
+    modal.classList.toggle('active')
+  }
+
+  closeButtons.forEach((button) => button.addEventListener('click', hideModal))
+  learnMoreCtas.forEach((cta) => cta.addEventListener('click', showModal))
+</script>

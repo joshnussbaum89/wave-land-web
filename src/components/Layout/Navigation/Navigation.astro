@@ -1,0 +1,26 @@
+---
+import Logo from '../../Icons/Logo.astro'
+import Desktop from './Desktop.astro'
+import Mobile from './Mobile.astro'
+---
+
+<nav>
+  <Logo />
+  <Desktop />
+  <Mobile />
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    nav {
+      padding: 2rem;
+    }
+  }
+</style>

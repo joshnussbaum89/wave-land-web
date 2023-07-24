@@ -1,0 +1,41 @@
+<div class="close">
+  <svg
+    width="159"
+    height="184"
+    viewBox="0 0 159 184"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M15 15L143.269 168.451" stroke-width="30" stroke-linecap="round"></path>
+    <path d="M15 168.455L143.263 15" stroke-width="30" stroke-linecap="round"></path>
+  </svg>
+</div>
+
+<style>
+  .close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    padding: 0.65rem;
+    background-color: var(--color-light-purple);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+  }
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: var(--color-black);
+    transition: all var(--transition-normal);
+  }
+
+  .close:hover {
+    background-color: var(--color-purple);
+  }
+
+  .close:hover svg {
+    stroke: var(--color-white);
+  }
+</style>
