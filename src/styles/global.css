@@ -3,10 +3,10 @@
 
   --size-extra-small: 1rem; /* line-height: 1.5rem */
   --size-small: 1.25rem; /* line-height: 1.75rem */
-  --size-medium: 1.5rem; /* line-height: 2rem */
-  --size-large: 2.25rem; /* line-height: 2.5rem */
-  --size-extra-large: 3rem;
-  --size-mega-large: 4rem;
+  --size-medium: 1.563rem; /* line-height: 2rem */
+  --size-large: 2.441rem; /* line-height: 2.5rem */
+  --size-extra-large: 3.052rem;
+  --size-mega-large: 3.815rem;
 
   /* Colors */
 
@@ -100,6 +100,22 @@ h4 {
   letter-spacing: 2px;
 }
 
+h1 {
+  font-size: var(--size-mega-large);
+}
+
+h2 {
+  font-size: var(--size-extra-large);
+}
+
+h3 {
+  font-size: var(--size-large);
+}
+
+h4 {
+  font-size: var(--size-medium);
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -107,6 +123,8 @@ a {
 
 p {
   margin: 0;
+  font-size: var(--size-extra-small);
+  line-height: 1.5;
 }
 
 ul {
@@ -166,7 +184,7 @@ button {
   color: var(--color-white);
   background-color: var(--color-black);
   border: 2px solid var(--color-black);
-  border-radius: 2rem;
+  border-radius: 3rem;
   box-shadow: var(--box-shadow-light);
   transition: color var(--transition-normal), background-color var(--transition-normal),
     box-shadow var(--transition-normal), transform 0.1s ease-in-out;
