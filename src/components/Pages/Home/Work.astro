@@ -321,6 +321,7 @@ const projects = [
     transition: all var(--transition-normal);
   }
 
+  .card.active button,
   .card-image-container:hover button {
     top: 50%;
     transform: translate(-50%, -50%);
@@ -348,6 +349,7 @@ const projects = [
     border-radius: var(--card-child-border-radius);
   }
 
+  .card.active .scrim,
   .card-image-container:hover .scrim {
     opacity: 0.4;
   }
@@ -459,8 +461,40 @@ const projects = [
 
 <script>
   const body = document.querySelector('body') as HTMLElement
+  const projectCards = [...document.querySelectorAll('.card')] as HTMLElement[]
+  const [cardOne, cardTwo, cardThree] = projectCards as HTMLElement[]
   const learnMoreCtas = [...document.querySelectorAll('.card .josh-cta')] as HTMLButtonElement[]
   const closeButtons = [...document.querySelectorAll('.close')] as HTMLButtonElement[]
+
+  /**
+   * Remove active styling from project cards
+   */
+  function resetCardStyling() {
+    projectCards.forEach((card) => card.classList.remove('active'))
+  }
+
+  /**
+   * Show CTAs on project cards when they are scrolled into view
+   */
+  function handleShowCtas() {
+    // Reset card styling on desktop & exit function
+    if (window.innerWidth > 768) {
+      resetCardStyling()
+      return
+    }
+
+    // Get scroll values
+    const scrollPadding = window.innerHeight * 0.5
+    const [cardOneTop, cardTwoTop, cardThreeTop] = projectCards.map(
+      (card) => card.getBoundingClientRect().top
+    )
+
+    // Handle active styling on project cards
+    resetCardStyling()
+    if (cardOneTop < scrollPadding && cardOneTop > 0) cardOne.classList.add('active')
+    if (cardTwoTop < scrollPadding && cardTwoTop > 0) cardTwo.classList.add('active')
+    if (cardThreeTop < scrollPadding && cardThreeTop > 0) cardThree.classList.add('active')
+  }
 
   /**
    * Prevent scrolling on body, and show modal that was clicked
@@ -485,6 +519,8 @@ const projects = [
     modal.classList.toggle('active')
   }
 
+  document.addEventListener('scroll', handleShowCtas)
+  window.addEventListener('resize', handleShowCtas)
   closeButtons.forEach((button) => button.addEventListener('click', hideModal))
   learnMoreCtas.forEach((cta) => cta.addEventListener('click', showModal))
 </script>

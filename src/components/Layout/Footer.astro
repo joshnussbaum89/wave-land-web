@@ -1,50 +1,9 @@
 ---
-// Company logos
-import aaa from '/aaa.svg'
-import pmi from '/pmi.svg'
-import tomFord from '/tom-ford.svg'
-import loreal from '/loreal.svg'
-import laRochePosay from '/la-roche-posay.svg'
-import churchDwight from '/church-dwight.svg'
-
-const logoData = [
-  {
-    src: aaa,
-    alt: 'AAA Logo',
-  },
-  {
-    src: pmi,
-    alt: 'PMI Logo',
-  },
-  {
-    src: tomFord,
-    alt: 'Tom Ford Logo',
-  },
-  {
-    src: loreal,
-    alt: "L'Oreal Logo",
-  },
-  {
-    src: laRochePosay,
-    alt: 'La Roche Posay Logo',
-  },
-  {
-    src: churchDwight,
-    alt: 'Church & Dwight Logo',
-  },
-]
+// import ClientLogos from './ClientLogos.astro'
 ---
 
 <footer id="footer" class="footer">
-  <div class="client-logos">
-    {
-      logoData.map((logo) => (
-        <div class="logo">
-          <img src={logo.src} alt={logo.alt} />
-        </div>
-      ))
-    }
-  </div>
+  <!-- <ClientLogos /> -->
   <p id="copyright"></p>
 </footer>
 
