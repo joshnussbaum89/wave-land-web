@@ -55,19 +55,40 @@
 </style>
 
 <script>
-  const navigationDots = document.querySelectorAll('#scrolling-navigation .dot')
+  const navigationDots = document.querySelectorAll('.scrolling-navigation .dot')
   let activeDotIndex = 0
-  let previousDotIndex = 0
+  let currentDotIndex = 0
 
-  function handleActiveNavigationDotStyling(element = this) {
-    // Prevent removing/adding class unnecessarily
-    if (activeDotIndex !== previousDotIndex) {
-      navigationDots.forEach((dot) => dot.classList.remove('active'))
-      element.classList.add('active')
-      previousDotIndex = activeDotIndex
+  /**
+   * Show current section
+   * @param section HTMLElement
+   */
+  function handleShowSection(section: HTMLElement) {
+    if (!section.classList.contains('active')) {
+      section.classList.add('active')
     }
   }
 
+  /**
+   * Handle active navigation dot styling
+   * @param element
+   */
+  function handleActiveNavigationDotStyling(element = this) {
+    // Prevent removing/adding class unnecessarily
+    if (activeDotIndex === currentDotIndex) return
+
+    // Active dot index increased (scrolling down)
+    // Style newly active dot
+    navigationDots.forEach((dot) => dot.classList.remove('active'))
+    element.classList.add('active')
+
+    // Update current dot index
+    currentDotIndex = activeDotIndex
+  }
+
+  /**
+   * On scroll callback for styling active navigation dots
+   */
   function handleActiveNavigationDotsOnScroll() {
     const work = document.getElementById('work') as HTMLElement
     const about = document.getElementById('about') as HTMLElement
@@ -82,49 +103,36 @@
     const scrollPadding = window.innerHeight * 0.5
 
     // Home
-    if (workTop > 0) {
-      activeDotIndex = 0
-    }
+    if (workTop > 0) activeDotIndex = 0
 
     // Work
     if (workTop < scrollPadding && aboutTop > 0) {
       activeDotIndex = 1
-
-      if (!work.classList.contains('active')) {
-        work.classList.add('active')
-      }
+      handleShowSection(work)
     }
 
     // About
     if (aboutTop < scrollPadding && faqTop > 0) {
       activeDotIndex = 2
-
-      if (!about.classList.contains('active')) {
-        about.classList.add('active')
-      }
+      handleShowSection(about)
     }
 
     // FAQ
     if (faqTop < scrollPadding && contactTop > 0) {
       activeDotIndex = 3
-
-      if (!faq.classList.contains('active')) {
-        faq.classList.add('active')
-      }
+      handleShowSection(faq)
     }
 
     // Contact
     if (contactTop < scrollPadding) {
       activeDotIndex = 4
-
-      if (!contact.classList.contains('active')) {
-        contact.classList.add('active')
-      }
+      handleShowSection(contact)
     }
 
     handleActiveNavigationDotStyling(document.querySelector(`.dot[data-index="${activeDotIndex}"]`))
   }
 
+  document.addEventListener('DOMContentLoaded', handleActiveNavigationDotsOnScroll)
   document.addEventListener('scroll', handleActiveNavigationDotsOnScroll)
   navigationDots.forEach((dot) => dot.addEventListener('click', handleActiveNavigationDotStyling))
 </script>

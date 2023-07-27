@@ -145,20 +145,19 @@ button {
 #header,
 #work,
 #about,
+#faq {
+  margin-bottom: 8rem;
+}
+
+#header,
+#work,
+#about,
 #faq,
 #contact {
   opacity: 0;
   padding: 1rem;
   height: auto;
   transition: opacity var(--transition-long);
-}
-
-#header.active,
-#work.active,
-#about.active,
-#faq.active,
-#contact.active {
-  opacity: 1;
 }
 
 @media (min-width: 768px) {
@@ -171,11 +170,12 @@ button {
   }
 }
 
-#header,
-#work,
-#about,
-#faq {
-  margin-bottom: 8rem;
+#header.active,
+#work.active,
+#about.active,
+#faq.active,
+#contact.active {
+  opacity: 1;
 }
 
 .josh-cta {
