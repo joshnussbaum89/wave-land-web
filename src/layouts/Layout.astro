@@ -1,21 +1,16 @@
 ---
-// Components
 import Navigation from '../components/Layout/Navigation/Navigation.astro'
 import Footer from '../components/Layout/Footer.astro'
-
-// Images
-import headshot from '/headshot-ai.webp'
-
-// Styles
 import '../styles/global.css'
 
 export interface Props {
   title: string
   description?: string
-  url: string
 }
 
-const { title, description, url } = Astro.props
+const { title, description } = Astro.props
+const canonicalURL = Astro.url.href
+const socialImageURL = new URL('/images/headshot-ai.webp', Astro.url)
 ---
 
 <!DOCTYPE html>
@@ -24,21 +19,36 @@ const { title, description, url } = Astro.props
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <link rel="canonical" href={canonicalURL} />
+    <meta
+      name="keywords"
+      content="Web Develepment, Web Design, Web Developer, Web Designer, Frontend Developer, Frontend Designer, Frontend, Frontend Design, Frontend Engineer, Frontend Engineering, Frontend Development, Creative Developer, Creative Engineer, Creative Engineering, Creative Development, Creative Design, Creative Designer, Art, Artist, Artistic, Freelance, Freelancer, Freelancing, Freelance Developer, Freelance Designer, Freelance Engineer, Freelance Engineering, Freelance Development, Freelance Design"
+    />
+    <meta name="author" content="Waveland Web" />
     <meta name="description" content={description} />
+    <meta name="title" content={title} />
     <meta property="og:title" content={title} />
-    <meta property="og:url" content={url} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={headshot} />
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:site" content="@wavelandweb" />
-    <meta property="twitter:creator" content="@wavelandweb" />
+    <meta property="og:image" content={socialImageURL} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content={socialImageURL} />
+    <meta name="twitter:site" content="@wavelandweb" />
+    <meta name="twitter:creator" content="@wavelandweb" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Favicon & Theme -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -46,6 +56,7 @@ const { title, description, url } = Astro.props
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
     <meta name="msapplication-TileColor" content="#000000" />
     <meta name="theme-color" content="#000000" />
+
     <title>{title}</title>
   </head>
   <body>
