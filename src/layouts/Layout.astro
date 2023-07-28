@@ -9,8 +9,10 @@ export interface Props {
 }
 
 const { title, description } = Astro.props
-const canonicalURL = Astro.url.href
-const socialImageURL = new URL('/images/headshot-ai.webp', Astro.url)
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+
+// TODO: image should be dynamic based on page
+const socialImageURL = new URL('/images/headshot-ai.webp', canonicalURL)
 ---
 
 <!DOCTYPE html>
