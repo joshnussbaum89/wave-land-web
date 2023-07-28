@@ -59,20 +59,12 @@
   let activeDotIndex = 0
   let currentDotIndex = 0
 
-  /**
-   * Show current section
-   * @param section HTMLElement
-   */
   function handleShowSection(section: HTMLElement) {
     if (!section.classList.contains('active')) {
       section.classList.add('active')
     }
   }
 
-  /**
-   * Handle active navigation dot styling
-   * @param element
-   */
   function handleActiveNavigationDotStyling(element = this) {
     // Prevent removing/adding class unnecessarily
     if (activeDotIndex === currentDotIndex) return
@@ -86,9 +78,6 @@
     currentDotIndex = activeDotIndex
   }
 
-  /**
-   * On scroll callback for styling active navigation dots
-   */
   function handleActiveNavigationDotsOnScroll() {
     const work = document.getElementById('work') as HTMLElement
     const about = document.getElementById('about') as HTMLElement

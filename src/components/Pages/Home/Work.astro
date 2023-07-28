@@ -316,7 +316,6 @@ const projects = [
     background-color: var(--color-light-purple);
     font-size: var(--size-extra-small);
     border: none;
-    box-shadow: none;
     opacity: 0;
     transition: all var(--transition-normal);
   }
@@ -325,12 +324,11 @@ const projects = [
   .card-image-container:hover button {
     top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 2;
     opacity: 1;
   }
 
-  .card-image-container button:hover,
-  .modal-buttons a:hover {
+  .card-image-container button:hover {
     background-color: var(--color-purple);
     color: var(--color-white);
     box-shadow: none;
@@ -342,8 +340,8 @@ const projects = [
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-black);
     opacity: 0;
+    background-color: var(--color-black);
     transition: all var(--transition-normal);
     box-shadow: var(--box-shadow-dark);
     border-radius: var(--card-child-border-radius);
@@ -352,6 +350,7 @@ const projects = [
   .card.active .scrim,
   .card-image-container:hover .scrim {
     opacity: 0.4;
+    z-index: 1;
   }
 
   /* Case study modal styles */
@@ -371,7 +370,7 @@ const projects = [
   .modal.active {
     opacity: 1;
     visibility: visible;
-    z-index: 1;
+    z-index: 2;
   }
 
   .modal-content {
@@ -457,25 +456,25 @@ const projects = [
     border: none;
     transition: all var(--transition-normal);
   }
+
+  .modal-buttons a:hover {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    transform: none;
+    box-shadow: none;
+  }
 </style>
 
 <script>
   const body = document.querySelector('body') as HTMLElement
-  const projectCards = [...document.querySelectorAll('.card')] as HTMLElement[]
-  const [cardOne, cardTwo, cardThree] = projectCards as HTMLElement[]
+  const projectCards = document.querySelectorAll('.card') as NodeListOf<HTMLElement>
   const learnMoreCtas = [...document.querySelectorAll('.card .josh-cta')] as HTMLButtonElement[]
   const closeButtons = [...document.querySelectorAll('.close')] as HTMLButtonElement[]
 
-  /**
-   * Remove active styling from project cards
-   */
   function resetCardStyling() {
     projectCards.forEach((card) => card.classList.remove('active'))
   }
 
-  /**
-   * Show CTAs on project cards when they are scrolled into view
-   */
   function handleShowCtas() {
     // Reset card styling on desktop & exit function
     if (window.innerWidth > 768) {
@@ -483,23 +482,25 @@ const projects = [
       return
     }
 
-    // Get scroll values
+    // Card values
+    const [cardOne, cardTwo, cardThree] = [...projectCards] as HTMLElement[]
+    const cardOneTop = cardOne.getBoundingClientRect().top
+    const cardTwoTop = cardTwo.getBoundingClientRect().top
+    const cardThreeTop = cardThree.getBoundingClientRect().top
+
+    // Scroll values
     const scrollPadding = window.innerHeight * 0.5
-    const [cardOneTop, cardTwoTop, cardThreeTop] = projectCards.map(
-      (card) => card.getBoundingClientRect().top
-    )
+    const cardOneIsInView = cardOneTop < scrollPadding && cardOneTop > 0
+    const cardTwoIsInView = cardTwoTop < scrollPadding && cardTwoTop > 0
+    const cardThreeIsInView = cardThreeTop < scrollPadding && cardThreeTop > 0
 
     // Handle active styling on project cards
     resetCardStyling()
-    if (cardOneTop < scrollPadding && cardOneTop > 0) cardOne.classList.add('active')
-    if (cardTwoTop < scrollPadding && cardTwoTop > 0) cardTwo.classList.add('active')
-    if (cardThreeTop < scrollPadding && cardThreeTop > 0) cardThree.classList.add('active')
+    if (cardOneIsInView) cardOne.classList.add('active')
+    if (cardTwoIsInView) cardTwo.classList.add('active')
+    if (cardThreeIsInView) cardThree.classList.add('active')
   }
 
-  /**
-   * Prevent scrolling on body, and show modal that was clicked
-   * @param event
-   */
   function showModal(event: MouseEvent) {
     const id = (event.target as HTMLElement).getAttribute('data-project-id')
     const modal = document.querySelector(`.modal[data-project-id="${id}"]`) as HTMLElement
@@ -508,10 +509,6 @@ const projects = [
     modal.classList.toggle('active')
   }
 
-  /**
-   * Allow scrolling on body, and hide modal that was clicked
-   * @param event
-   */
   function hideModal(event: MouseEvent) {
     const modal = (event.target as HTMLElement).closest('.modal') as HTMLElement
 
@@ -521,6 +518,6 @@ const projects = [
 
   document.addEventListener('scroll', handleShowCtas)
   window.addEventListener('resize', handleShowCtas)
-  closeButtons.forEach((button) => button.addEventListener('click', hideModal))
   learnMoreCtas.forEach((cta) => cta.addEventListener('click', showModal))
+  closeButtons.forEach((button) => button.addEventListener('click', hideModal))
 </script>
