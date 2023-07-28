@@ -23,24 +23,30 @@ const socialImageURL = new URL('/images/headshot-ai.webp', canonicalURL)
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO -->
-    <link rel="canonical" href={canonicalURL} />
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
     <meta
       name="keywords"
       content="Web Develepment, Web Design, Web Developer, Web Designer, Frontend Developer, Frontend Designer, Frontend, Frontend Design, Frontend Engineer, Frontend Engineering, Frontend Development, Creative Developer, Creative Engineer, Creative Engineering, Creative Development, Creative Design, Creative Designer, Art, Artist, Artistic, Freelance, Freelancer, Freelancing, Freelance Developer, Freelance Designer, Freelance Engineer, Freelance Engineering, Freelance Development, Freelance Design"
     />
-    <meta name="author" content="Waveland Web" />
-    <meta name="description" content={description} />
-    <meta name="title" content={title} />
-    <meta property="og:title" content={title} />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content={socialImageURL} />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:image" content={socialImageURL} />
-    <meta name="twitter:site" content="@wavelandweb" />
-    <meta name="twitter:creator" content="@wavelandweb" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Facebook -->
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content="wavelandweb.com" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,8 +64,6 @@ const socialImageURL = new URL('/images/headshot-ai.webp', canonicalURL)
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
     <meta name="msapplication-TileColor" content="#000000" />
     <meta name="theme-color" content="#000000" />
-
-    <title>{title}</title>
   </head>
   <body>
     <div class="site-wrapper">
