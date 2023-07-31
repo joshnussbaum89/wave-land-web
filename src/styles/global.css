@@ -65,6 +65,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 1px;
   overflow: auto;
+
+  /* Experimental, but fallback is default styling */
+  text-wrap: balance;
 }
 
 body[data-overlay-displayed='true'] {

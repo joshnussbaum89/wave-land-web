@@ -14,7 +14,7 @@
     right: 2.5%;
     bottom: 1rem;
     padding: 1rem 1rem 1rem 0;
-    z-index: 1;
+    z-index: 2;
   }
 
   @media (min-width: 768px) {
@@ -78,50 +78,42 @@
     currentDotIndex = activeDotIndex
   }
 
-  function handleActiveNavigationDotsOnScroll() {
+  function handleActiveElementsOnScroll() {
+    // Grab sections
+    const header = document.getElementById('header') as HTMLElement
     const work = document.getElementById('work') as HTMLElement
     const about = document.getElementById('about') as HTMLElement
     const faq = document.getElementById('faq') as HTMLElement
     const contact = document.getElementById('contact') as HTMLElement
+    const sections = [header, work, about, faq, contact]
 
-    // Get scroll values
-    const workTop = work.getBoundingClientRect().top
-    const aboutTop = about.getBoundingClientRect().top
-    const faqTop = faq.getBoundingClientRect().top
-    const contactTop = contact.getBoundingClientRect().top
-    const scrollPadding = window.innerHeight * 0.5
-
-    // Home
-    if (workTop > 0) activeDotIndex = 0
-
-    // Work
-    if (workTop < scrollPadding && aboutTop > 0) {
-      activeDotIndex = 1
-      handleShowSection(work)
+    // IntersectionObserver API to detect when a section is in view
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
     }
 
-    // About
-    if (aboutTop < scrollPadding && faqTop > 0) {
-      activeDotIndex = 2
-      handleShowSection(about)
-    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const section = entry.target as HTMLElement
+          const index = section.getAttribute('data-scroll-index') as string
 
-    // FAQ
-    if (faqTop < scrollPadding && contactTop > 0) {
-      activeDotIndex = 3
-      handleShowSection(faq)
-    }
+          activeDotIndex = +index
+          handleShowSection(section)
+        }
+      })
+    }, options)
 
-    // Contact
-    if (contactTop < scrollPadding) {
-      activeDotIndex = 4
-      handleShowSection(contact)
-    }
+    // Observe each section
+    sections.forEach((section) => observer.observe(section))
 
+    // Style active dot
     handleActiveNavigationDotStyling(document.querySelector(`.dot[data-index="${activeDotIndex}"]`))
   }
 
-  document.addEventListener('DOMContentLoaded', handleActiveNavigationDotsOnScroll)
-  document.addEventListener('scroll', handleActiveNavigationDotsOnScroll)
+  document.addEventListener('DOMContentLoaded', handleActiveElementsOnScroll)
+  document.addEventListener('scroll', handleActiveElementsOnScroll)
   navigationDots.forEach((dot) => dot.addEventListener('click', handleActiveNavigationDotStyling))
 </script>

@@ -120,7 +120,7 @@ const projects = [
 ]
 ---
 
-<section id="work" class="work">
+<section id="work" class="work" data-scroll-index="1">
   <div>
     <SectionHeader text="Featured Work" />
     <div class="work-circle desktop">
@@ -482,23 +482,25 @@ const projects = [
       return
     }
 
-    // Card values
-    const [cardOne, cardTwo, cardThree] = [...projectCards] as HTMLElement[]
-    const cardOneTop = cardOne.getBoundingClientRect().top
-    const cardTwoTop = cardTwo.getBoundingClientRect().top
-    const cardThreeTop = cardThree.getBoundingClientRect().top
+    // IntersectionObserver API to detect when a project is in view
+    const options = {
+      root: document.querySelector('.projects'),
+      rootMargin: '0px',
+      threshold: 1,
+    }
 
-    // Scroll values
-    const scrollPadding = window.innerHeight * 0.5
-    const cardOneIsInView = cardOneTop < scrollPadding && cardOneTop > 0
-    const cardTwoIsInView = cardTwoTop < scrollPadding && cardTwoTop > 0
-    const cardThreeIsInView = cardThreeTop < scrollPadding && cardThreeTop > 0
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active')
+        } else {
+          entry.target.classList.remove('active')
+        }
+      })
+    }, options)
 
-    // Handle active styling on project cards
-    resetCardStyling()
-    if (cardOneIsInView) cardOne.classList.add('active')
-    if (cardTwoIsInView) cardTwo.classList.add('active')
-    if (cardThreeIsInView) cardThree.classList.add('active')
+    // Observe each project card
+    projectCards.forEach((card) => observer.observe(card))
   }
 
   function showModal(event: MouseEvent) {
