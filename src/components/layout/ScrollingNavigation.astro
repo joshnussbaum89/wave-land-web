@@ -79,6 +79,8 @@
   }
 
   function handleActiveElementsOnScroll() {
+    if (!window.IntersectionObserver) return console.log('IntersectionObserver not supported')
+
     // Grab sections
     const header = document.getElementById('header') as HTMLElement
     const work = document.getElementById('work') as HTMLElement
@@ -87,7 +89,6 @@
     const contact = document.getElementById('contact') as HTMLElement
     const sections = [header, work, about, faq, contact]
 
-    // IntersectionObserver API to detect when a section is in view
     const options = {
       root: null,
       rootMargin: '0px',
@@ -106,10 +107,8 @@
       })
     }, options)
 
-    // Observe each section
     sections.forEach((section) => observer.observe(section))
 
-    // Style active dot
     handleActiveNavigationDotStyling(document.querySelector(`.dot[data-index="${activeDotIndex}"]`))
   }
 

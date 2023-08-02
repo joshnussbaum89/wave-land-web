@@ -75,25 +75,21 @@ import SectionHeader from '../../layout/SectionHeader.astro'
     border-radius: 5px;
   }
 
-  .form label {
-    margin-bottom: 0.25rem;
-  }
-
-  .form label span {
-    color: var(--color-red);
-  }
-
   .form input,
   .form textarea {
     margin-bottom: 1rem;
     padding: 0.5rem;
     border: 2px solid var(--color-black);
     background: var(--color-white);
+    transition: var(--transition-normal);
   }
 
-  .form input::placeholder,
-  .form textarea::placeholder {
-    color: var(--color-grey-text);
+  .form label {
+    margin-bottom: 0.25rem;
+  }
+
+  .form label span {
+    color: var(--color-red);
   }
 
   .form textarea {
@@ -110,5 +106,19 @@ import SectionHeader from '../../layout/SectionHeader.astro'
     .form button {
       font-size: var(--size-medium);
     }
+  }
+
+  .form input:focus,
+  .form textarea:focus {
+    outline: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 0 0 2px var(--color-light-purple);
+    box-shadow: 0 0 0 2px var(--color-light-purple);
+  }
+
+  .form input::placeholder,
+  .form textarea::placeholder {
+    color: var(--color-grey-text);
   }
 </style>

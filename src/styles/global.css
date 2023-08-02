@@ -12,29 +12,38 @@
 
   --color-black: #1e1e1e;
   --color-black-dark: #151515;
+  --color-true-white: #ffffff;
   --color-white: #fcfcfc;
   --color-white-transparent: #fcfcfcee;
   --color-grey: #b5b5b5;
   --color-grey-text: #9c9c9c;
   --color-light-grey: #d9d9d9;
-  --color-dark-grey-transparent: #44444440;
+  --color-grey-transparent: #4444441a;
   --color-green: #b2f0d1;
   --color-light-green: #d7ffeb;
   --color-purple: #771dab;
   --color-light-purple: #edcdff;
   --color-red: #de3726;
-  --gradient-background: linear-gradient(
+
+  /* Gradients */
+
+  --gradient-site-container: linear-gradient(
     135deg,
     var(--color-green),
     var(--color-purple),
     var(--color-green)
+  );
+  --gradient-black-background: radial-gradient(
+    farthest-corner circle at 33% 44%,
+    var(--color-black) 0%,
+    var(--color-black-dark) 100%
   );
 
   /* Shadows */
 
   --box-shadow-dark: 2px 2px 10px var(--color-black);
   --box-shadow-normal: 2px 2px 10px var(--color-grey);
-  --box-shadow-light: 2px 2px 10px var(--color-dark-grey-transparent);
+  --box-shadow-light: 2px 2px 20px var(--color-grey-transparent);
 
   /* Animations */
 
@@ -59,7 +68,7 @@ html {
 }
 
 body {
-  background: var(--gradient-background);
+  background: var(--gradient-site-container);
   font-family: 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -235,4 +244,11 @@ button {
   100% {
     box-shadow: none;
   }
+}
+
+/* Pseudo elements */
+
+::selection {
+  color: var(--color-black);
+  background: var(--color-light-green);
 }
