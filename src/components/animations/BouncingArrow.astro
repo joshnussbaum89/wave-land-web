@@ -7,22 +7,34 @@ const { scrollToLink } = Astro.props
 ---
 
 <a href={`${scrollToLink}`}>
-  <div class="arrow"></div>
+  <svg
+    width="314"
+    height="172"
+    viewBox="0 0 314 172"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M157 156.421L298.421 15" stroke="#1e1e1e" stroke-width="30" stroke-linecap="round"
+    ></path>
+    <path
+      d="M156.845 156.787L15.4239 15.3653"
+      stroke="#1e1e1e"
+      stroke-width="30"
+      stroke-linecap="round"></path>
+  </svg>
 </a>
 
 <style>
-  .arrow {
+  svg {
     display: none;
   }
 
   @media (min-width: 768px) {
-    .arrow {
+    svg {
+      width: 3rem;
+      height: 3rem;
       display: block;
-      width: 30px;
-      height: 30px;
       margin: auto;
-      border-top: 4px solid var(--color-black);
-      border-left: 4px solid var(--color-black);
       animation: bounce 2s ease-in-out infinite;
     }
   }
