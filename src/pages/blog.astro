@@ -1,19 +1,19 @@
 ---
-import BlogCard from '../components/Layout/BlogCard.astro'
+// import BlogCard from '../components/layout/BlogCard.astro'
 import Layout from '../layouts/Layout.astro'
 
-const allPosts = await Astro.glob('./blog/*.md')
-const sortedPosts = allPosts.sort((a, b) => b.frontmatter.id - a.frontmatter.id)
-const newestPost = sortedPosts.at(0)!.frontmatter
-const recentPosts = sortedPosts.slice(1, allPosts.length)
+// const allPosts = await Astro.glob('./blog/*.md')
+// const sortedPosts = allPosts.sort((a, b) => b.frontmatter.id - a.frontmatter.id)
+// const newestPost = sortedPosts.at(0)!.frontmatter
+// const recentPosts = sortedPosts.slice(1, allPosts.length)
 
-function createEllipsisText(text: string, maxLength: number) {
-  const subText = text.substring(0, maxLength)
-  const lastChar = subText[maxLength - 1]
-  return lastChar !== ' ' ? `${subText}...` : `${subText.substring(0, maxLength - 1)}...`
-}
+// function createEllipsisText(text: string, maxLength: number) {
+//   const subText = text.substring(0, maxLength)
+//   const lastChar = subText[maxLength - 1]
+//   return lastChar !== ' ' ? `${subText}...` : `${subText.substring(0, maxLength - 1)}...`
+// }
 
-const truncatedDescriptionText = createEllipsisText(newestPost.description, 200)
+// const truncatedDescriptionText = createEllipsisText(newestPost.description, 200)
 ---
 
 <Layout
