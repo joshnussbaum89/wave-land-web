@@ -172,13 +172,7 @@ const projects = [
             {project.caseStudy.map((section) => {
               return (
                 <div class="modal-section">
-                  <img
-                    src={section.image}
-                    alt={project.alt}
-                    width="1132"
-                    height="604"
-                    loading="lazy"
-                  />
+                  <img src={section.image} alt={project.alt} width="1132" height="604" />
                   <div class="modal-info">
                     <h3>{section.title}</h3>
                     <p>{section.description}</p>
@@ -378,7 +372,11 @@ const projects = [
     height: calc(100vh - 10rem);
     padding: 5rem 2rem;
     color: var(--color-white);
-    background-color: var(--color-black);
+    background-image: radial-gradient(
+      farthest-corner circle at 33% 44% in oklch,
+      var(--color-black) 0%,
+      var(--color-black-dark) 100%
+    );
     overflow-y: auto;
   }
 

@@ -11,6 +11,7 @@
   /* Colors */
 
   --color-black: #1e1e1e;
+  --color-black-dark: #151515;
   --color-white: #fcfcfc;
   --color-white-transparent: #fcfcfcee;
   --color-grey: #b5b5b5;
@@ -20,7 +21,6 @@
   --color-green: #b2f0d1;
   --color-light-green: #d7ffeb;
   --color-purple: #771dab;
-  --color-purple-bright: #9337c8;
   --color-light-purple: #edcdff;
   --color-red: #de3726;
   --gradient-background: linear-gradient(
