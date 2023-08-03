@@ -1,9 +1,10 @@
 ---
+import { Image } from 'astro:assets'
 import AnimatedCta from '../../animations/GlowingCta.astro'
 import SectionHeader from '../../layout/SectionHeader.astro'
 import CurvedText from '../../icons/CurvedText.astro'
 import JoshCta from '../../buttons/JoshCta.astro'
-import joshWoods from '/images/josh-woods.webp'
+import joshWoods from '../../../assets/josh-woods.webp'
 ---
 
 <section id="about" class="about" data-scroll-index="2">
@@ -51,13 +52,7 @@ import joshWoods from '/images/josh-woods.webp'
   </div>
   <div class="container">
     <CurvedText />
-    <img
-      src={joshWoods}
-      alt="Josh Nussbaum on a tree stump on a hiking trail"
-      width="628"
-      height="742"
-      loading="lazy"
-    />
+    <Image src={joshWoods} quality="high" alt="Josh Nussbaum on a tree stump on a hiking trail" />
     <div class="container-info">
       <AnimatedCta text="Get in touch" url="/#contact" />
       <h3>Currently Using</h3>
@@ -127,7 +122,6 @@ import joshWoods from '/images/josh-woods.webp'
       height: auto;
       display: block;
       margin: 0 auto;
-      padding: 0 1rem;
     }
 
     .container-info {

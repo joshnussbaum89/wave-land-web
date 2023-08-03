@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets'
+
+// Components
 import SectionHeader from '../../layout/SectionHeader.astro'
 import Circle from '../../layout/Circle.astro'
 import Arrow from '../../icons/Arrow.astro'
@@ -6,24 +9,24 @@ import Dots from '../../icons/Dots.astro'
 import Close from '../../icons/Close.astro'
 
 // Moonbelly Makes
-import moonbellyMainImage from '/images/moonbelly.webp'
-import moonbellyMacbookImage from '/images/macbook-moonbelly.png'
-import moonbellyIphoneImage from '/images/iphone-moonbelly.png'
+import moonbellyMainImage from '../../../assets/moonbelly.webp'
+import moonbellyMacbookImage from '../../../assets/macbook-moonbelly.png'
+import moonbellyIphoneImage from '../../../assets/iphone-moonbelly.png'
 
 // Supervoid TV
-import supervoidMainImage from '/images/supervoid.webp'
-import supervoidMacbookImage from '/images/macbook-supervoid.png'
-import supervoidIphoneImage from '/images/iphone-supervoid.png'
+import supervoidMainImage from '../../../assets/supervoid.webp'
+import supervoidMacbookImage from '../../../assets/macbook-supervoid.png'
+import supervoidIphoneImage from '../../../assets/iphone-supervoid.png'
 
 // Robby Webb
-import robbyWebbMainImage from '/images/robby-webb.webp'
-import robbyWebbMacbookImage from '/images/macbook-robby-webb.png'
-import robbyWebbIphoneImage from '/images/iphone-robby-webb.png'
+import robbyWebbMainImage from '../../../assets/robby-webb.webp'
+import robbyWebbMacbookImage from '../../../assets/macbook-robby-webb.png'
+import robbyWebbIphoneImage from '../../../assets/iphone-robby-webb.png'
 
 // Style Guide Images
-import moonbellyStyleGuideImage from '/images/moonbelly-style-guide.png'
-import supervoidStyleGuideImage from '/images/supervoid-style-guide.png'
-import robbyWebbStyleGuideImage from '/images/robby-webb-style-guide.png'
+import moonbellyStyleGuideImage from '../../../assets/moonbelly-style-guide.png'
+import supervoidStyleGuideImage from '../../../assets/supervoid-style-guide.png'
+import robbyWebbStyleGuideImage from '../../../assets/robby-webb-style-guide.png'
 
 const projects = [
   {
@@ -139,13 +142,7 @@ const projects = [
             <span>0{`${project.id}`}</span>
             <h3>{project.title}</h3>
             <div class="card-image-container">
-              <img
-                src={project.mainImage}
-                alt={project.alt}
-                width="3008"
-                height="1720"
-                loading="lazy"
-              />
+              <Image src={project.mainImage} quality="high" alt={project.alt} />
               <button class="josh-cta" data-project-id={project.id}>
                 Learn More
               </button>
@@ -172,7 +169,7 @@ const projects = [
             {project.caseStudy.map((section) => {
               return (
                 <div class="modal-section">
-                  <img src={section.image} alt={project.alt} width="1132" height="604" />
+                  <Image src={section.image} quality="high" alt={project.alt} />
                   <div class="modal-info">
                     <h3>{section.title}</h3>
                     <p>{section.description}</p>
