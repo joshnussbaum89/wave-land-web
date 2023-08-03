@@ -11,7 +11,7 @@ const target = openInNewTab ? '_blank' : null
 const rel = openInNewTab ? 'noopener noreferrer' : null
 ---
 
-<a class={`${className} josh-cta`} href={url} target={target} rel={rel}>{text}</a>
+<a class={`${className} josh-cta`} href={url} target={target} rel={rel} aria-label={text}>{text}</a>
 
 <style>
   a {

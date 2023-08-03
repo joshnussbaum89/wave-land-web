@@ -7,7 +7,7 @@ export interface Props {
 const { text, url } = Astro.props
 ---
 
-<a href={`${url}`} class="cta">
+<a href={url} class="cta" aria-label={text} title="Contact">
   <span class="outer-circle">
     <span class="inner-circle"></span>
   </span>
