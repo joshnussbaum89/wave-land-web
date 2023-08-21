@@ -6,7 +6,14 @@ import SectionHeader from '../../layout/SectionHeader.astro'
   <div class="contact-container">
     <SectionHeader text="Contact Us" />
     <p>Have something you are looking to build? Let's make it ✨</p>
-    <form method="POST" class="form" name="contactForm" action="/success" data-netlify="true">
+    <form
+      method="POST"
+      class="form"
+      name="contactForm"
+      action="/success"
+      data-netlify="true"
+      data-netlify-recaptcha="true"
+    >
       <label for="name">Name: <span>*</span></label>
       <input id="name" type="text" name="name" placeholder="Name" required />
       <label for="email">Email: <span>*</span></label>
@@ -19,6 +26,7 @@ import SectionHeader from '../../layout/SectionHeader.astro'
         rows="5"
         placeholder="Write your message"
         required></textarea>
+      <div data-netlify-recaptcha="true"></div>
       <button class="josh-cta" type="submit">Send Message</button>
     </form>
   </div>
