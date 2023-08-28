@@ -27,3 +27,9 @@ const { class: className } = Astro.props
     align-items: center;
   }
 </style>
+
+<script>
+  // Fade in #header element on every page
+  const header = document.getElementById('header')
+  window.addEventListener('DOMContentLoaded', () => header?.classList.add('active'))
+</script>

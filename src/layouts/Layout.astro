@@ -76,8 +76,6 @@ const socialImageURL = new URL('/images/social-media.jpg', canonicalURL)
 </html>
 
 <script>
-  const header = document.getElementById('header')
-
   function handleActiveSiteSectionsOnScroll() {
     if (!window.IntersectionObserver) return console.log('IntersectionObserver not supported')
 
@@ -102,7 +100,5 @@ const socialImageURL = new URL('/images/social-media.jpg', canonicalURL)
     sections.forEach((section) => observer.observe(section))
   }
 
-  // Fade in #header element on every page
-  window.addEventListener('DOMContentLoaded', () => header?.classList.add('active'))
   document.addEventListener('scroll', handleActiveSiteSectionsOnScroll)
 </script>
