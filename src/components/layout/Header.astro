@@ -6,30 +6,44 @@ export interface Props {
 const { class: className } = Astro.props
 ---
 
-<header id="header" class:list={['header site-section', className]} data-scroll-index="0">
+<header id="header" class:list={['header', className]} data-scroll-index="0">
   <slot />
 </header>
 
 <style>
   .header {
+    max-width: 50rem;
+    min-height: calc(100vh - 10rem);
+    margin: 0 auto 8rem;
     z-index: 1;
     position: relative;
-  }
-
-  .header {
-    max-width: 50rem;
-    margin: 0 auto 8rem;
-    min-height: calc(100vh - 20rem);
+    padding: 1rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: opacity var(--transition-long);
+  }
+
+  @media (min-width: 768px) {
+    .header {
+      padding: 2rem;
+      min-height: calc(100vh - 23rem);
+    }
+  }
+
+  .header.active {
+    opacity: 1;
   }
 </style>
 
 <script>
-  // Fade in #header element on every page
-  const header = document.getElementById('header')
-  window.addEventListener('DOMContentLoaded', () => header?.classList.add('active'))
+  function handleFadeInOnLoad() {
+    const header = document.querySelector('.header')
+    header?.classList.add('active')
+  }
+
+  window.addEventListener('load', handleFadeInOnLoad)
 </script>

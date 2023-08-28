@@ -340,7 +340,7 @@ const projects = [
     height: 100%;
     opacity: 0;
     background-color: var(--color-black);
-    transition: all var(--transition-normal);
+    transition: opacity var(--transition-normal);
     border-radius: var(--card-child-border-radius);
   }
 
@@ -361,7 +361,7 @@ const projects = [
     opacity: 0;
     visibility: hidden;
     z-index: -1;
-    transition: all var(--transition-normal);
+    transition: opacity var(--transition-normal);
   }
 
   .modal.active {
@@ -452,7 +452,7 @@ const projects = [
     color: var(--color-black);
     background-color: var(--color-light-purple);
     border: none;
-    transition: all var(--transition-normal);
+    transition: background-color var(--transition-normal), color var(--transition-normal);
   }
 
   .modal-buttons a:hover {
