@@ -1,12 +1,13 @@
 :root {
   /* Font Sizes */
 
-  --size-extra-small: 1rem; /* line-height: 1.5rem */
-  --size-small: 1.25rem; /* line-height: 1.75rem */
-  --size-medium: 1.563rem; /* line-height: 2rem */
-  --size-large: 2.441rem; /* line-height: 2.5rem */
-  --size-extra-large: 3.052rem;
-  --size-mega-large: 3.815rem;
+  --size-xxs: 0.75rem; /* line-height: 1rem */
+  --size-xs: 1rem; /* line-height: 1.5rem */
+  --size-sm: 1.25rem; /* line-height: 1.75rem */
+  --size-base: 1.563rem; /* line-height: 2rem */
+  --size-lg: 2.441rem; /* line-height: 2.5rem */
+  --size-xl: 3.052rem;
+  --size-xxl: 3.815rem;
 
   /* Colors */
 
@@ -112,20 +113,16 @@ h4 {
   letter-spacing: 2px;
 }
 
-h1 {
-  font-size: var(--size-mega-large);
-}
-
 h2 {
-  font-size: var(--size-extra-large);
+  font-size: var(--size-xl);
 }
 
 h3 {
-  font-size: var(--size-large);
+  font-size: var(--size-lg);
 }
 
 h4 {
-  font-size: var(--size-medium);
+  font-size: var(--size-base);
 }
 
 a {
@@ -135,7 +132,7 @@ a {
 
 p {
   margin: 0;
-  font-size: var(--size-extra-small);
+  font-size: var(--size-xs);
   line-height: 1.5;
 }
 
@@ -154,18 +151,7 @@ button {
   font-family: 'Outfit', sans-serif;
 }
 
-#header,
-#work,
-#about,
-#faq {
-  margin-bottom: 8rem;
-}
-
-#header,
-#work,
-#about,
-#faq,
-#contact {
+.site-section {
   opacity: 0;
   padding: 1rem;
   height: auto;
@@ -173,20 +159,12 @@ button {
 }
 
 @media (min-width: 768px) {
-  #header,
-  #work,
-  #about,
-  #faq,
-  #contact {
+  .site-section {
     padding: 2rem;
   }
 }
 
-#header.active,
-#work.active,
-#about.active,
-#faq.active,
-#contact.active {
+.site-section.active {
   opacity: 1;
 }
 

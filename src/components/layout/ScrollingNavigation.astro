@@ -59,12 +59,6 @@
   let activeDotIndex = 0
   let currentDotIndex = 0
 
-  function handleShowSection(section: HTMLElement) {
-    if (!section.classList.contains('active')) {
-      section.classList.add('active')
-    }
-  }
-
   function handleActiveNavigationDotStyling(element = this) {
     // Prevent removing/adding class unnecessarily
     if (activeDotIndex === currentDotIndex) return
@@ -102,7 +96,6 @@
           const index = section.getAttribute('data-scroll-index') as string
 
           activeDotIndex = +index
-          handleShowSection(section)
         }
       })
     }, options)

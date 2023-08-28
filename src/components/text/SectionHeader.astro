@@ -1,0 +1,25 @@
+---
+export interface Props {
+  text: string
+  class?: string
+}
+
+const { text, class: className } = Astro.props
+---
+
+<h2 class={className}>{text}</h2>
+
+<style>
+  h2 {
+    margin: 1rem 0 2rem;
+    font-size: var(--size-lg);
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: var(--size-xl);
+      text-align: center;
+    }
+  }
+</style>

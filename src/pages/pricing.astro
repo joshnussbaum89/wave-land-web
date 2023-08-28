@@ -1,0 +1,246 @@
+---
+import Layout from '../layouts/Layout.astro'
+import RotatingCircles from '../components/animations/RotatingCircles.astro'
+import PageHeader from '../components/text/PageHeader.astro'
+import SectionHeader from '../components/text/SectionHeader.astro'
+import Check from '../components/icons/Check.astro'
+import Header from '../components/layout/Header.astro'
+---
+
+<Layout title="Wave Land Web | Pricing" description="Wave Land Web Service Offerings and Pricing">
+  <RotatingCircles class="rotating-circles" />
+  <Header>
+    <PageHeader text="Pricing" class="page-header" />
+    <div class="header-info">
+      <p>Choose a plan that's right for you</p>
+      <p>
+        Wave Land Web offers a variety of plans to fit your needs. Whether you're looking for a
+        simple blog or a full-fledged e-commerce website, we've got you covered.
+      </p>
+    </div>
+  </Header>
+
+  <main class="pricing">
+    <div class="development site-section">
+      <SectionHeader text="Design & Development" />
+      <div class="pricing-container">
+        <div class="pricing-card recommended">
+          <h3>Unlimited</h3>
+          <span class="pricing-tag">recommended</span>
+          <p class="description">Perfect for geing started with a professional website</p>
+          <p class="price"><strong>$300</strong> /month</p>
+          <a href="/#contact" class="josh-cta">Contact Us</a>
+          <ul>
+            <li><Check />Covers the cost for any type of website</li>
+            <li><Check />Hassle-free website management</li>
+            <li><Check />Hosting and maintenance included</li>
+            <li><Check />Unlimited content and feature updates</li>
+          </ul>
+        </div>
+        <div class="pricing-card">
+          <h3>Standard Website</h3>
+          <p class="description">Ideal for showcasing your brand and generating content</p>
+          <p class="price"><strong>$3,500</strong> /base</p>
+          <a href="/#contact" class="josh-cta">Contact Us</a>
+          <ul>
+            <li><Check />Marketing website or blog</li>
+            <li><Check />Connect with your audience</li>
+            <li><Check />Custom design and development</li>
+          </ul>
+        </div>
+        <div class="pricing-card">
+          <h3>E-Commerce Website</h3>
+          <p class="description">Start selling your products or services online</p>
+          <p class="price"><strong>$6,000</strong> /base</p>
+          <a href="/#contact" class="josh-cta">Contact Us</a>
+          <ul>
+            <li><Check />Generate revenue online 24/7</li>
+            <li><Check />Secure online payment processing and shopping cart functionality</li>
+            <li><Check />Custom design and development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="maintenance site-section">
+      <SectionHeader text="Website Management" />
+      <div class="pricing-container">
+        <div class="pricing-card recommended">
+          <h3>Full Service</h3>
+          <span class="pricing-tag">add on</span>
+          <p class="description">Let us handle the hard stuff so you can focus on your business</p>
+          <p class="price"><strong>$100</strong> /month</p>
+          <a href="/#contact" class="josh-cta">Contact Us</a>
+          <ul>
+            <li>
+              <Check />Ensures website remains secure, loads quickly, and is regularly backed up
+            </li>
+            <li><Check />Monthly maintenance to keep your website up to date</li>
+            <li><Check />Improved website performance and SEO</li>
+          </ul>
+        </div>
+        <div class="pricing-card">
+          <h3>Self-Hosting & Maintenance</h3>
+          <p class="description">Take control of your website and manage it yourself</p>
+          <p class="price"><strong>$50</strong> /hour</p>
+          <a href="/#contact" class="josh-cta">Contact Us</a>
+          <ul>
+            <li><Check />You handle hosting and domain management independently</li>
+            <li><Check />You handle website maintenance independently</li>
+            <li>
+              <Check />We remain available for any support you may need at an affordable hourly rate
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .rotating-circles {
+    animation: none;
+    max-width: 90rem;
+  }
+
+  .page-header {
+    margin-bottom: 0.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: var(--size-base);
+    color: var(--color-purple);
+  }
+
+  .header-info p {
+    margin: 0 auto 1rem;
+  }
+
+  .header-info p:nth-child(1) {
+    font-family: 'Marcellus', sans-serif;
+    font-size: var(--size-xl);
+    line-height: normal;
+  }
+
+  @media (min-width: 768px) {
+    .header-info p:nth-child(1) {
+      font-size: var(--size-xxl);
+    }
+  }
+
+  .header-info p:nth-child(2) {
+    font-size: var(--size-sm);
+  }
+
+  @media (min-width: 768px) {
+    .header-info p:nth-child(2) {
+      font-size: var(--size-base);
+    }
+  }
+
+  .pricing {
+    position: relative;
+    z-index: 1;
+    height: auto;
+    margin: 0 auto 8rem;
+  }
+
+  @media (min-width: 768px) {
+    .pricing h2 {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .development,
+  .maintenance {
+    margin-bottom: 8rem;
+  }
+
+  .pricing-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+  }
+
+  .pricing-card {
+    position: relative;
+    padding: 1.5rem;
+    background-color: var(--color-true-white);
+    border: 1px solid var(--color-grey-text);
+    border-radius: 10px;
+    transition: all var(--transition-normal);
+  }
+
+  @media (min-width: 768px) {
+    .pricing-card {
+      padding: 2rem;
+    }
+  }
+
+  .pricing-card.recommended h3 {
+    color: var(--color-purple);
+  }
+
+  .pricing-card:hover,
+  .pricing-card.active {
+    border-color: var(--color-black);
+    box-shadow: var(--box-shadow-light);
+  }
+
+  .pricing-card.recommended {
+    border-color: var(--color-purple);
+    box-shadow: var(--box-shadow-light);
+    border-width: 2px;
+  }
+
+  .pricing-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    background-color: var(--color-light-purple);
+    color: var(--color-purple);
+    font-size: var(--size-xxs);
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 0 calc(10px - 2px) 0 calc(10px - 2px);
+  }
+
+  .development .description {
+    max-width: 350px;
+  }
+
+  .pricing-card h3,
+  .pricing-card p,
+  .pricing-card li {
+    margin-bottom: 1rem;
+  }
+
+  .pricing-card h3 {
+    font-size: var(--size-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .pricing-card p {
+    color: var(--color-grey-text);
+  }
+
+  .pricing-card .price strong {
+    font-size: var(--size-lg);
+    font-weight: 600;
+    color: var(--color-black);
+  }
+
+  .pricing-card a {
+    margin: 2rem auto;
+    padding: 1rem;
+    font-size: var(--size-sm);
+    text-align: center;
+    display: block;
+  }
+
+  .pricing-card li {
+    display: flex;
+    gap: 0.75rem;
+    color: var(--color-grey-text);
+  }
+</style>

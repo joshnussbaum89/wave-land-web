@@ -1,8 +1,8 @@
 ---
-import SectionHeader from '../../layout/SectionHeader.astro'
+import SectionHeader from '../../text/SectionHeader.astro'
 ---
 
-<section id="faq" class="faq" data-scroll-index="3">
+<section id="faq" class="faq site-section" data-scroll-index="3">
   <SectionHeader text="Frequently Asked Questions" />
 
   <div class="faq-section">
@@ -13,10 +13,9 @@ import SectionHeader from '../../layout/SectionHeader.astro'
       <p>
         The cost of a website depends on various factors, such as its complexity, features, and the
         amount of customization required. Click <a
-          href="/files/service-offerings-and-rates.pdf"
-          aria-label="Click here to download all available pricing options"
-          download>here</a
-        > to download all available pricing options, and feel free to reach out below with any other
+          href="/pricing"
+          aria-label="Click here to see all available pricing options">here</a
+        > to see all of our available pricing options, and feel free to reach out below with any other
         questions!
       </p>
     </details>
@@ -143,7 +142,7 @@ import SectionHeader from '../../layout/SectionHeader.astro'
 <style>
   .faq {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 8rem;
   }
 
   .faq h2,
@@ -179,14 +178,14 @@ import SectionHeader from '../../layout/SectionHeader.astro'
   }
 
   .faq-section h3 {
-    font-size: var(--size-small);
+    font-size: var(--size-sm);
     font-weight: 600;
     text-transform: uppercase;
   }
 
   @media (min-width: 768px) {
     .faq-section h3 {
-      font-size: var(--size-medium);
+      font-size: var(--size-base);
     }
   }
 
@@ -236,7 +235,7 @@ import SectionHeader from '../../layout/SectionHeader.astro'
 
   @media (min-width: 768px) {
     summary {
-      font-size: var(--size-small);
+      font-size: var(--size-sm);
     }
   }
 
@@ -260,12 +259,12 @@ import SectionHeader from '../../layout/SectionHeader.astro'
   }
 
   details p {
-    font-size: var(--size-extra-small);
+    font-size: var(--size-xs);
   }
 
   @media (min-width: 768px) {
     details p {
-      font-size: var(--size-small);
+      font-size: var(--size-sm);
     }
   }
 

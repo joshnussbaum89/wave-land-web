@@ -1,0 +1,68 @@
+---
+import RotatingCircles from '../../animations/RotatingCircles.astro'
+import PageHeader from '../../text/PageHeader.astro'
+import JoshCta from '../../buttons/JoshCta.astro'
+import SocialIcons from '../../layout/SocialIcons.astro'
+import BouncingArrow from '../../animations/BouncingArrow.astro'
+import Header from '../../layout/Header.astro'
+---
+
+<Header class="header">
+  <RotatingCircles />
+  <div class="header-info">
+    <PageHeader text="Wave Land Web" />
+    <p>Helping Artists & Creatives Build Their Digital Presence</p>
+    <JoshCta text="Create Your Website" url="/#contact" />
+    <SocialIcons />
+  </div>
+  <BouncingArrow scrollToLink="#work" />
+</Header>
+
+<style>
+  .header {
+    min-height: calc(100vh - 10rem);
+  }
+
+  .header-info {
+    z-index: 1;
+    width: 100%;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .header-info {
+      flex-direction: row-reverse;
+      justify-content: center;
+      gap: 2vw;
+      margin-bottom: 8rem;
+    }
+  }
+
+  .header-info img {
+    width: 48vw;
+    height: 100%;
+    max-width: 250px;
+    box-shadow: var(--box-shadow-light);
+    border: 2px solid var(--color-black);
+    border-radius: 50%;
+  }
+
+  .header-info p {
+    width: 88%;
+    max-width: 36rem;
+    margin: 0 auto 1rem;
+    font-size: var(--size-sm);
+    font-weight: var(--weight-bold);
+  }
+
+  @media (min-width: 768px) {
+    .header-info p {
+      font-size: var(--size-base);
+    }
+  }
+
+  .header-info a {
+    margin-bottom: 1.5rem;
+  }
+</style>

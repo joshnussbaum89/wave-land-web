@@ -1,7 +1,7 @@
 ---
-import JoshCta from '../components/buttons/JoshCta.astro'
-import SectionHeader from '../components/layout/SectionHeader.astro'
 import Layout from '../layouts/Layout.astro'
+import SectionHeader from '../components/text/SectionHeader.astro'
+import JoshCta from '../components/buttons/JoshCta.astro'
 ---
 
 <Layout title="Wave Land Web | Success" description="Successful form submit">
@@ -37,24 +37,24 @@ import Layout from '../layouts/Layout.astro'
 
   .info p {
     margin: 0 auto 1rem;
-    font-size: var(--size-small);
+    font-size: var(--size-sm);
     font-weight: var(--weight-bold);
   }
 
   @media (min-width: 768px) {
     .info p {
-      font-size: var(--size-medium);
+      font-size: var(--size-base);
     }
   }
 
   .info h2 {
     margin-bottom: 1rem;
-    font-size: var(--size-large);
+    font-size: var(--size-lg);
   }
 
   @media (min-width: 768px) {
     .info h2 {
-      font-size: var(--size-extra-large);
+      font-size: var(--size-xl);
     }
   }
 </style>

@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 
 // Components
-import SectionHeader from '../../layout/SectionHeader.astro'
+import SectionHeader from '../../text/SectionHeader.astro'
 import Circle from '../../layout/Circle.astro'
 import Arrow from '../../icons/Arrow.astro'
 import Dots from '../../icons/Dots.astro'
@@ -126,9 +126,9 @@ const projects = [
 ]
 ---
 
-<section id="work" class="work" data-scroll-index="1">
+<section id="work" class="work site-section" data-scroll-index="1">
   <div>
-    <SectionHeader text="Featured Work" />
+    <SectionHeader text="Featured Work" class="header" />
     <div class="work-circle desktop">
       <a href="/#faq" aria-label="Frequently Asked Questions" title="Frequently Asked Questions">
         <Circle />
@@ -200,6 +200,7 @@ const projects = [
 <style>
   .work {
     position: relative;
+    margin-bottom: 8rem;
   }
 
   @media (min-width: 768px) {
@@ -210,17 +211,17 @@ const projects = [
     }
   }
 
-  .work h2 {
+  .header {
     margin-bottom: 2rem;
-    font-size: var(--size-extra-large);
+    font-size: var(--size-xl);
     text-transform: uppercase;
     text-align: left;
   }
 
   @media (min-width: 768px) {
-    .work h2 {
+    .header {
       margin-top: 0;
-      font-size: var(--size-mega-large);
+      font-size: var(--size-xxl);
     }
   }
 
@@ -277,13 +278,13 @@ const projects = [
   .card span {
     display: inline-block;
     margin-bottom: 1rem;
-    font-size: var(--size-extra-large);
+    font-size: var(--size-xl);
     color: var(--color-purple);
   }
 
   .card h3 {
     margin-bottom: 1rem;
-    font-size: var(--size-medium);
+    font-size: var(--size-base);
   }
 
   .card-image-container {
@@ -311,7 +312,7 @@ const projects = [
     padding: 0.75rem;
     color: var(--color-black);
     background-color: var(--color-light-purple);
-    font-size: var(--size-extra-small);
+    font-size: var(--size-xs);
     border: none;
     opacity: 0;
     transition: all var(--transition-normal);
@@ -447,7 +448,7 @@ const projects = [
     width: 100%;
     max-width: 100px;
     text-align: center;
-    font-size: var(--size-extra-small);
+    font-size: var(--size-xs);
     color: var(--color-black);
     background-color: var(--color-light-purple);
     border: none;

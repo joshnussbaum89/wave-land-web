@@ -27,23 +27,23 @@ const { frontmatter } = Astro.props
 
   #blog-container h1 {
     margin-bottom: 3rem;
-    font-size: var(--size-large);
+    font-size: var(--size-lg);
     text-align: center;
   }
 
   @media (min-width: 768px) {
     #blog-container h1 {
-      font-size: var(--size-extra-large);
+      font-size: var(--size-xl);
     }
   }
 
   #blog-container h2 {
-    font-size: var(--size-medium);
+    font-size: var(--size-base);
   }
 
   @media (min-width: 768px) {
     #blog-container h2 {
-      font-size: var(--size-large);
+      font-size: var(--size-lg);
     }
   }
 
@@ -79,13 +79,13 @@ const { frontmatter } = Astro.props
 
   #blog-container p,
   #blog-container li {
-    font-size: var(--size-extra-small);
+    font-size: var(--size-xs);
   }
 
   @media (min-width: 768px) {
     #blog-container p,
     #blog-container li {
-      font-size: var(--size-small);
+      font-size: var(--size-sm);
     }
   }
 

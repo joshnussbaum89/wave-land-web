@@ -1,6 +1,9 @@
 ---
-// import BlogCard from '../components/layout/BlogCard.astro'
 import Layout from '../layouts/Layout.astro'
+import Header from '../components/layout/Header.astro'
+import PageHeader from '../components/text/PageHeader.astro'
+
+// import BlogCard from '../components/layout/BlogCard.astro'
 
 // const allPosts = await Astro.glob('./blog/*.md')
 // const sortedPosts = allPosts.sort((a, b) => b.frontmatter.id - a.frontmatter.id)
@@ -20,9 +23,12 @@ import Layout from '../layouts/Layout.astro'
   title="Wave Land Web | Blog"
   description="Explore the captivating insights and expertise within Wave Land Web's esteemed blog, where we delve into the realms of web development, design, and the broader creative landscape, offering thought-provoking articles that immerse you in a world of knowledge and inspiration"
 >
-  <section id="blog-container">
-    <h1>Coming Soon...</h1>
-    <!-- <h1>Blog</h1>
+  <Header>
+    <PageHeader text="Coming Soon..." />
+  </Header>
+
+  <!-- <section id="blog-container">
+    <h1>Blog</h1>
     <div class="newest-post-container">
       <a href={newestPost.url}>
         <img src={newestPost.image.url} alt={newestPost.image.alt} />
@@ -45,8 +51,8 @@ import Layout from '../layouts/Layout.astro'
           />
         ))
       }
-    </div> -->
-  </section>
+    </div>
+  </section> -->
 </Layout>
 
 <style>
@@ -64,15 +70,16 @@ import Layout from '../layouts/Layout.astro'
     }
   }
 
+  /* TODO: use PageHeader component */
   #blog-container h1 {
     margin-bottom: 2.5rem;
-    font-size: var(--size-large);
+    font-size: var(--size-lg);
     text-align: center;
   }
 
   @media (min-width: 768px) {
     #blog-container h1 {
-      font-size: var(--size-extra-large);
+      font-size: var(--size-xl);
     }
   }
 
@@ -112,13 +119,13 @@ import Layout from '../layouts/Layout.astro'
   }
 
   .newest-post-info h2 {
-    font-size: var(--size-small);
+    font-size: var(--size-sm);
     text-transform: uppercase;
   }
 
   @media (min-width: 768px) {
     .newest-post-info h2 {
-      font-size: var(--size-medium);
+      font-size: var(--size-base);
     }
   }
 

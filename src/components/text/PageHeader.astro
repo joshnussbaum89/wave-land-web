@@ -7,19 +7,18 @@ export interface Props {
 const { text, class: className } = Astro.props
 ---
 
-<h2 class={className}>{text}</h2>
+<h1 class={className}>{text}</h1>
 
 <style>
-  h2 {
-    margin: 1rem 0 2rem;
-    font-size: var(--size-large);
+  h1 {
+    margin-bottom: 1rem;
+    font-size: var(--size-xl);
     text-align: center;
   }
 
   @media (min-width: 768px) {
-    h2 {
-      font-size: var(--size-extra-large);
-      text-align: center;
+    h1 {
+      font-size: var(--size-xxl);
     }
   }
 </style>

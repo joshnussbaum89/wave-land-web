@@ -1,8 +1,8 @@
 ---
-import SectionHeader from '../../layout/SectionHeader.astro'
+import SectionHeader from '../../text/SectionHeader.astro'
 ---
 
-<section id="contact" class="contact" data-scroll-index="4">
+<section id="contact" class="contact site-section" data-scroll-index="4">
   <div class="contact-container">
     <SectionHeader text="Contact Us" />
     <p>Have something you are looking to build? Let's make it ✨</p>
@@ -39,14 +39,14 @@ import SectionHeader from '../../layout/SectionHeader.astro'
     display: block;
     max-width: 420px;
     margin: 0 auto 2rem;
-    font-size: var(--size-small);
+    font-size: var(--size-sm);
     text-align: center;
   }
 
   @media (min-width: 768px) {
     .contact-container > p {
       max-width: 500px;
-      font-size: var(--size-medium);
+      font-size: var(--size-base);
     }
   }
 
@@ -54,7 +54,7 @@ import SectionHeader from '../../layout/SectionHeader.astro'
     display: flex;
     flex-direction: column;
     margin-bottom: 7rem;
-    font-size: var(--size-small);
+    font-size: var(--size-sm);
   }
 
   @media (min-width: 768px) {
@@ -66,7 +66,7 @@ import SectionHeader from '../../layout/SectionHeader.astro'
   .form label,
   .form input,
   .form textarea {
-    font-size: var(--size-small);
+    font-size: var(--size-sm);
   }
 
   .form label,
@@ -99,12 +99,12 @@ import SectionHeader from '../../layout/SectionHeader.astro'
   .form button {
     margin: 0 auto;
     padding: 1rem;
-    font-size: var(--size-small);
+    font-size: var(--size-sm);
   }
 
   @media (min-width: 768px) {
     .form button {
-      font-size: var(--size-medium);
+      font-size: var(--size-base);
     }
   }
 

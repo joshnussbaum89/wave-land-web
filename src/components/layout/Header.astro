@@ -1,0 +1,29 @@
+---
+export interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<header id="header" class:list={['header site-section', className]} data-scroll-index="0">
+  <slot />
+</header>
+
+<style>
+  .header {
+    z-index: 1;
+    position: relative;
+  }
+
+  .header {
+    max-width: 50rem;
+    margin: 0 auto 8rem;
+    min-height: calc(100vh - 20rem);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
