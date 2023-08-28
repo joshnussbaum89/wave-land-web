@@ -7,6 +7,6 @@ export default defineConfig({
     assets: true,
   },
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always',
   },
 })
