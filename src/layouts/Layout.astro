@@ -10,10 +10,7 @@ export interface Props {
 
 const { title, description } = Astro.props
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
-
-// TODO: find a better image
-// TODO: image should be dynamic based on page
-const socialImageURL = new URL('/images/social-media.jpg', canonicalURL)
+const socialImageURL = new URL('../assets/social-media.jpg', canonicalURL)
 ---
 
 <!DOCTYPE html>

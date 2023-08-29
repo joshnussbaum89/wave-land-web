@@ -7,12 +7,12 @@ const { class: className } = Astro.props
 ---
 
 <svg
-  class={`${className}`}
+  class={className}
   xmlns="http://www.w3.org/2000/svg"
   version="1.1"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   viewBox="0 0 800 800"
-  opacity="0.4"
+  opacity="0.75"
   ><defs
     ><filter
       id="bbblurry-filter"
@@ -25,7 +25,7 @@ const { class: className } = Astro.props
       color-interpolation-filters="sRGB"
     >
       <feGaussianBlur
-        stdDeviation="32"
+        stdDeviation="74"
         x="0%"
         y="0%"
         width="100%"
@@ -35,12 +35,12 @@ const { class: className } = Astro.props
         result="blur"></feGaussianBlur></filter
     ></defs
   ><g filter="url(#bbblurry-filter)"
-    ><ellipse rx="170.5" ry="181" cx="223.2146181436109" cy="599.5434714112606" fill="#d7ffeb"
+    ><ellipse rx="130.5" ry="132" cx="298.87459943681483" cy="517.3594945138663" fill="#d7ffebff"
     ></ellipse><ellipse
-      rx="170.5"
-      ry="181"
-      cx="599.1017344210161"
-      cy="217.8820951771362"
+      rx="130.5"
+      ry="132"
+      cx="521.9915784266607"
+      cy="281.3780543142588"
       fill="#edcdffff"></ellipse></g
   ></svg
 >
@@ -50,9 +50,8 @@ const { class: className } = Astro.props
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    animation: rotate 20s linear infinite;
+    width: 100%;
+    animation: rotate 60s linear infinite;
   }
 
   @keyframes rotate {

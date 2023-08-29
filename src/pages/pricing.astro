@@ -1,26 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import RotatingCircles from '../components/animations/RotatingCircles.astro'
-import PageHeader from '../components/text/PageHeader.astro'
-import SectionHeader from '../components/text/SectionHeader.astro'
-import Check from '../components/icons/Check.astro'
 import Header from '../components/layout/Header.astro'
+import PageHeader from '../components/text/PageHeader.astro'
+import BouncingArrow from '../components/animations/BouncingArrow.astro'
+import SectionHeader from '../components/text/SectionHeader.astro'
+import JoshCta from '../components/buttons/JoshCta.astro'
+import Check from '../components/icons/Check.astro'
 ---
 
 <Layout title="Wave Land Web | Pricing" description="Wave Land Web Service Offerings and Pricing">
-  <RotatingCircles class="rotating-circles" />
   <Header>
-    <PageHeader text="Pricing" class="page-header" />
     <div class="header-info">
+      <PageHeader text="Pricing" class="page-header" />
       <p>Choose Your Plan</p>
       <p>
         Wave Land Web offers a variety of plans to fit your needs. Whether you're looking for a
         simple blog or a full-fledged e-commerce website, we've got you covered.
       </p>
     </div>
+    <BouncingArrow scrollToLink="#pricing" title="Pricing" />
   </Header>
 
-  <main class="pricing">
+  <main id="pricing" class="pricing">
     <div class="development site-section">
       <SectionHeader text="Design & Development" />
       <div class="pricing-container">
@@ -29,7 +30,7 @@ import Header from '../components/layout/Header.astro'
           <span class="pricing-tag">recommended</span>
           <p class="description">Perfect for geing started with a professional website</p>
           <p class="price"><strong>$300</strong> /month</p>
-          <a href="/#contact" class="josh-cta">Contact Us</a>
+          <JoshCta text="Contact Us" url="/#contact" class="pricing-cta" />
           <ul>
             <li><Check />Covers the cost for any type of website</li>
             <li><Check />Hassle-free website management</li>
@@ -41,7 +42,7 @@ import Header from '../components/layout/Header.astro'
           <h3>Standard Website</h3>
           <p class="description">Ideal for showcasing your brand and generating content</p>
           <p class="price"><strong>$3,500</strong> /base</p>
-          <a href="/#contact" class="josh-cta">Contact Us</a>
+          <JoshCta text="Contact Us" url="/#contact" class="pricing-cta" />
           <ul>
             <li><Check />Marketing website or blog</li>
             <li><Check />Connect with your audience</li>
@@ -52,7 +53,7 @@ import Header from '../components/layout/Header.astro'
           <h3>E-Commerce Website</h3>
           <p class="description">Start selling your products or services online</p>
           <p class="price"><strong>$6,000</strong> /base</p>
-          <a href="/#contact" class="josh-cta">Contact Us</a>
+          <JoshCta text="Contact Us" url="/#contact" class="pricing-cta" />
           <ul>
             <li><Check />Generate revenue online 24/7</li>
             <li><Check />Secure online payment processing and shopping cart functionality</li>
@@ -70,7 +71,7 @@ import Header from '../components/layout/Header.astro'
           <span class="pricing-tag">add on</span>
           <p class="description">Let us handle the hard stuff so you can focus on your business</p>
           <p class="price"><strong>$100</strong> /month</p>
-          <a href="/#contact" class="josh-cta">Contact Us</a>
+          <JoshCta text="Contact Us" url="/#contact" class="pricing-cta" />
           <ul>
             <li>
               <Check />Ensures website remains secure, loads quickly, and is regularly backed up
@@ -83,7 +84,7 @@ import Header from '../components/layout/Header.astro'
           <h3>Self-Hosting & Maintenance</h3>
           <p class="description">Take control of your website and manage it yourself</p>
           <p class="price"><strong>$50</strong> /hour</p>
-          <a href="/#contact" class="josh-cta">Contact Us</a>
+          <JoshCta text="Contact Us" url="/#contact" class="pricing-cta" />
           <ul>
             <li><Check />You handle hosting and domain management independently</li>
             <li><Check />You handle website maintenance independently</li>
@@ -98,11 +99,6 @@ import Header from '../components/layout/Header.astro'
 </Layout>
 
 <style>
-  .rotating-circles {
-    animation: none;
-    max-width: 90rem;
-  }
-
   .page-header {
     margin-bottom: 0.5rem;
     font-family: 'Outfit', sans-serif;
@@ -110,28 +106,32 @@ import Header from '../components/layout/Header.astro'
     color: var(--color-purple);
   }
 
+  .header-info {
+    z-index: 1;
+  }
+
   .header-info p {
     margin: 0 auto 1rem;
   }
 
-  .header-info p:nth-child(1) {
+  .header-info p:nth-of-type(1) {
     font-family: 'Marcellus', sans-serif;
     font-size: var(--size-xl);
     line-height: normal;
   }
 
   @media (min-width: 768px) {
-    .header-info p:nth-child(1) {
+    .header-info p:nth-of-type(1) {
       font-size: var(--size-xxl);
     }
   }
 
-  .header-info p:nth-child(2) {
+  .header-info p:nth-of-type(2) {
     font-size: var(--size-sm);
   }
 
   @media (min-width: 768px) {
-    .header-info p:nth-child(2) {
+    .header-info p:nth-of-type(2) {
       font-size: var(--size-base);
     }
   }
@@ -226,16 +226,13 @@ import Header from '../components/layout/Header.astro'
 
   .pricing-card .price strong {
     font-size: var(--size-lg);
-    font-weight: 600;
     color: var(--color-black);
   }
 
-  .pricing-card a {
-    margin: 2rem auto;
-    padding: 1rem;
-    font-size: var(--size-sm);
-    text-align: center;
+  .pricing-cta {
     display: block;
+    margin: 2rem auto;
+    font-size: var(--size-sm);
   }
 
   .pricing-card li {

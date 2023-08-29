@@ -1,5 +1,4 @@
 ---
-import RotatingCircles from '../../animations/RotatingCircles.astro'
 import PageHeader from '../../text/PageHeader.astro'
 import JoshCta from '../../buttons/JoshCta.astro'
 import SocialIcons from '../../layout/SocialIcons.astro'
@@ -7,36 +6,19 @@ import BouncingArrow from '../../animations/BouncingArrow.astro'
 import Header from '../../layout/Header.astro'
 ---
 
-<Header class="header">
-  <RotatingCircles />
+<Header>
   <div class="header-info">
     <PageHeader text="Wave Land Web" />
     <p>Helping Artists & Creatives Build Their Digital Presence</p>
     <JoshCta text="Create Your Website" url="/#contact" />
     <SocialIcons />
   </div>
-  <BouncingArrow scrollToLink="#work" />
+  <BouncingArrow scrollToLink="#work" title="Work" />
 </Header>
 
 <style>
-  .header {
-    min-height: calc(100vh - 10rem) !important;
-  }
-
   .header-info {
     z-index: 1;
-    width: 100%;
-    margin-bottom: 4rem;
-    text-align: center;
-  }
-
-  @media (min-width: 768px) {
-    .header-info {
-      flex-direction: row-reverse;
-      justify-content: center;
-      gap: 2vw;
-      margin-bottom: 8rem;
-    }
   }
 
   .header-info img {
@@ -50,7 +32,7 @@ import Header from '../../layout/Header.astro'
 
   .header-info p {
     width: 88%;
-    max-width: 36rem;
+    max-width: 22rem;
     margin: 0 auto 1rem;
     font-size: var(--size-sm);
     font-weight: var(--weight-bold);

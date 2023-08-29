@@ -1,4 +1,6 @@
 ---
+import RotatingCircles from '../animations/RotatingCircles.astro'
+
 export interface Props {
   class?: string
 }
@@ -7,13 +9,14 @@ const { class: className } = Astro.props
 ---
 
 <header id="header" class:list={['header', className]} data-scroll-index="0">
+  <RotatingCircles />
   <slot />
 </header>
 
 <style>
   .header {
     max-width: 50rem;
-    min-height: calc(100vh - 10rem);
+    min-height: calc(100vh - 14rem);
     margin: 0 auto 8rem;
     z-index: 1;
     position: relative;

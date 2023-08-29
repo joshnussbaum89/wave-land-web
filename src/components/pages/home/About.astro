@@ -65,84 +65,84 @@ import joshWoods from '../../../assets/josh-woods.webp'
       </ul>
     </div>
   </div>
+</section>
 
-  <style>
-    .about {
-      margin-bottom: 8rem;
-      text-align: center;
-    }
+<style>
+  .about {
+    margin-bottom: 8rem;
+    text-align: center;
+  }
 
-    .bio {
-      max-width: 750px;
-      margin: 0 auto 2rem;
-      font-size: var(--size-xs);
-    }
+  .bio {
+    max-width: 750px;
+    margin: 0 auto 2rem;
+    font-size: var(--size-xs);
+  }
 
-    .bio p {
-      margin-bottom: 1rem;
-    }
+  .bio p {
+    margin-bottom: 1rem;
+  }
 
-    .bio p a {
-      text-decoration: underline;
-      color: var(--color-purple);
-      transition: all var(--transition-normal);
-    }
+  .bio p a {
+    text-decoration: underline;
+    color: var(--color-purple);
+    transition: all var(--transition-normal);
+  }
 
-    .bio p a:hover {
-      opacity: var(--hover-opacity-link);
-    }
+  .bio p a:hover {
+    opacity: var(--hover-opacity-link);
+  }
 
+  .bio .cta {
+    margin: 2rem auto;
+  }
+
+  @media (min-width: 768px) {
     .bio .cta {
-      margin: 2rem auto;
+      margin: 2rem auto 4rem;
     }
+  }
 
-    @media (min-width: 768px) {
-      .bio .cta {
-        margin: 2rem auto 4rem;
-      }
-    }
+  .container {
+    display: grid;
+    gap: 6rem;
+  }
 
+  @media (min-width: 1024px) {
     .container {
-      display: grid;
-      gap: 6rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
     }
+  }
 
-    @media (min-width: 1024px) {
-      .container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-      }
-    }
+  .container img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
 
-    .container img {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
+  .container-info {
+    margin: 0 auto;
+    text-align: left;
+  }
 
-    .container-info {
-      margin: 0 auto;
+  .container-info h3 {
+    margin-bottom: 1rem;
+    font-size: var(--size-base);
+    text-transform: uppercase;
+  }
+
+  .container-info ul {
+    font-size: var(--size-xs);
+    line-height: 1.5rem;
+    text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    .container-info ul {
       text-align: left;
     }
-
-    .container-info h3 {
-      margin-bottom: 1rem;
-      font-size: var(--size-base);
-      text-transform: uppercase;
-    }
-
-    .container-info ul {
-      font-size: var(--size-xs);
-      line-height: 1.5rem;
-      text-align: center;
-    }
-
-    @media (min-width: 1024px) {
-      .container-info ul {
-        text-align: left;
-      }
-    }
-  </style>
-</section>
+  }
+</style>

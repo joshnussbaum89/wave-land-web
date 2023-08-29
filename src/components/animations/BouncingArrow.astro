@@ -1,12 +1,13 @@
 ---
 export interface Props {
   scrollToLink: string
+  title: string
 }
 
-const { scrollToLink } = Astro.props
+const { scrollToLink, title } = Astro.props
 ---
 
-<a href={scrollToLink} aria-label="Learn more about our work" title="Work">
+<a href={scrollToLink} aria-label={title} title={title}>
   <svg
     width="314"
     height="172"
@@ -25,6 +26,11 @@ const { scrollToLink } = Astro.props
 </a>
 
 <style>
+  a {
+    position: absolute;
+    bottom: -2rem;
+  }
+
   svg {
     display: none;
   }
