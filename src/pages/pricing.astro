@@ -1,14 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import ScrollingNavigation from '../components/layout/ScrollingNavigation.astro'
 import Header from '../components/layout/Header.astro'
 import PageHeader from '../components/text/PageHeader.astro'
 import BouncingArrow from '../components/animations/BouncingArrow.astro'
 import SectionHeader from '../components/text/SectionHeader.astro'
 import JoshCta from '../components/buttons/JoshCta.astro'
 import Check from '../components/icons/Check.astro'
+
+const sections = [
+  { name: 'Top', id: '#' },
+  { name: 'Design & Development', id: '#design-and-development' },
+  { name: 'Website Management', id: '#website-management' },
+]
 ---
 
 <Layout title="Wave Land Web | Pricing" description="Wave Land Web Service Offerings and Pricing">
+  <ScrollingNavigation sections={sections} />
   <Header>
     <div class="header-info">
       <PageHeader text="Pricing" class="page-header" />
@@ -22,7 +30,7 @@ import Check from '../components/icons/Check.astro'
   </Header>
 
   <main id="pricing" class="pricing">
-    <div class="development site-section">
+    <div id="design-and-development" class="design-and-development site-section">
       <SectionHeader text="Design & Development" />
       <div class="pricing-container">
         <div class="pricing-card recommended">
@@ -63,7 +71,7 @@ import Check from '../components/icons/Check.astro'
       </div>
     </div>
 
-    <div class="maintenance site-section">
+    <div id="website-management" class="website-management site-section">
       <SectionHeader text="Website Management" />
       <div class="pricing-container">
         <div class="pricing-card recommended">
@@ -145,8 +153,8 @@ import Check from '../components/icons/Check.astro'
     }
   }
 
-  .development,
-  .maintenance {
+  .design-and-development,
+  .website-management {
     margin-bottom: 8rem;
   }
 
@@ -200,7 +208,7 @@ import Check from '../components/icons/Check.astro'
     border-radius: 0 calc(10px - 2px) 0 calc(10px - 2px);
   }
 
-  .development .description {
+  .design-and-development .description {
     max-width: 350px;
   }
 

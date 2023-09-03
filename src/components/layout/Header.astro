@@ -8,7 +8,7 @@ export interface Props {
 const { class: className } = Astro.props
 ---
 
-<header id="header" class:list={['header', className]} data-scroll-index="0">
+<header id="header" class:list={['header site-section', className]} data-scroll-index="0">
   <RotatingCircles />
   <slot />
 </header>
@@ -26,8 +26,6 @@ const { class: className } = Astro.props
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: opacity var(--transition-long);
   }
 
   @media (min-width: 768px) {
@@ -36,17 +34,4 @@ const { class: className } = Astro.props
       min-height: calc(100vh - 23rem);
     }
   }
-
-  .header.active {
-    opacity: 1;
-  }
 </style>
-
-<script>
-  function handleFadeInOnLoad() {
-    const header = document.querySelector('.header')
-    header?.classList.add('active')
-  }
-
-  window.addEventListener('load', handleFadeInOnLoad)
-</script>

@@ -6,13 +6,21 @@ import About from '../components/pages/home/About.astro'
 import RecentWork from '../components/pages/home/Work.astro'
 import Faq from '../components/pages/home/Faq.astro'
 import Contact from '../components/pages/home/Contact.astro'
+
+const sections = [
+  { name: 'Top', id: '#' },
+  { name: 'Work', id: '#work' },
+  { name: 'About', id: '#about' },
+  { name: 'FAQ', id: '#faq' },
+  { name: 'Contact', id: '#contact' },
+]
 ---
 
 <Layout
   title="Wave Land Web | Creative Web Design & Development"
   description="Wave Land Web is a creative web design and development agency based in Madison, WI. We specialize in building beautiful, responsive, user-focused websites for artists and small businesses."
 >
-  <ScrollingNavigation />
+  <ScrollingNavigation sections={sections} />
   <Hero />
   <RecentWork />
   <About />
