@@ -1,0 +1,30 @@
+---
+export interface Props {
+  href: string
+  text: string
+  newWindow?: boolean
+  ariaLabel?: string
+}
+
+const { href, text, newWindow, ariaLabel } = Astro.props
+---
+
+<a
+  class="site-link"
+  href={href}
+  target={newWindow ? '_blank' : '_self'}
+  rel="noopener noreferrer"
+  aria-label={ariaLabel}>{text}</a
+>
+
+<style>
+  .site-link {
+    text-decoration: underline;
+    color: var(--color-purple);
+    transition: all var(--transition-normal);
+  }
+
+  .site-link:hover {
+    opacity: var(--hover-opacity-link);
+  }
+</style>

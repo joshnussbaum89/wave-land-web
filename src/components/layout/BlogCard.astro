@@ -1,14 +1,22 @@
 ---
-const { url, title, date, image, altText } = Astro.props
+export interface Props {
+  slug: string
+  title: string
+  published: string
+  imageSrc: string
+  imageAlt: string
+}
+
+const { slug, title, published, imageSrc, imageAlt } = Astro.props
 ---
 
 <div class="card">
-  <a href={url}>
-    <img src={image} alt={altText} />
+  <a href={slug}>
+    <img src={imageSrc} alt={imageAlt} />
   </a>
   <div class="card-info">
-    <p>{date}</p>
-    <h3><a href={url}>{title}</a></h3>
+    <p>{published}</p>
+    <h3><a href={slug}>{title}</a></h3>
   </div>
 </div>
 

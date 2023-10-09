@@ -1,5 +1,6 @@
 ---
 import SectionHeader from '../../text/SectionHeader.astro'
+import Link from '../../text/Link.astro'
 ---
 
 <section id="faq" class="faq site-section" data-scroll-index="3">
@@ -12,11 +13,12 @@ import SectionHeader from '../../text/SectionHeader.astro'
       <summary>How much will my website cost?</summary>
       <p>
         The cost of a website depends on various factors, such as its complexity, features, and the
-        amount of customization required. Click <a
+        amount of customization required. Click <Link
           href="/pricing"
-          aria-label="Click here to see all available pricing options">here</a
-        > to see all of our available pricing options, and feel free to reach out below with any other
-        questions!
+          text="here"
+          ariaLabel="Click here to see all available pricing options"
+        /> to see all of our available pricing options, and feel free to reach out below with any
+        other questions!
       </p>
     </details>
     <details>
@@ -266,16 +268,6 @@ import SectionHeader from '../../text/SectionHeader.astro'
     details p {
       font-size: var(--size-sm);
     }
-  }
-
-  details a {
-    text-decoration: underline;
-    color: var(--color-purple);
-    transition: all var(--transition-normal);
-  }
-
-  details a:hover {
-    opacity: var(--hover-opacity-link);
   }
 </style>
 

@@ -25,14 +25,15 @@ const { sections } = Astro.props
 <style>
   .scrolling-navigation {
     position: fixed;
-    right: 2.5%;
+    right: 2rem;
     bottom: 1rem;
-    padding: 1rem 1rem 1rem 0;
+    padding: 1rem 0 1rem 0;
     z-index: 2;
   }
 
   @media (min-width: 768px) {
     .scrolling-navigation {
+      right: 2.5%;
       bottom: 4rem;
       padding: 0 2rem 0 0;
     }

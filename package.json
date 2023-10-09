@@ -8,7 +8,8 @@
     "start": "astro preview"
   },
   "dependencies": {
-    "astro": "^3.0.7",
+    "@astrojs/mdx": "^1.1.1",
+    "astro": "^3.2.3",
     "autoprefixer": "^10.4.14"
   }
 }
