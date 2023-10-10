@@ -1,8 +1,8 @@
 ---
-import { Image } from 'astro:assets'
 import AnimatedCta from '../../animations/GlowingCta.astro'
 import SectionHeader from '../../text/SectionHeader.astro'
 import CurvedText from '../../icons/CurvedText.astro'
+import Picture from '../../images/Picture.astro'
 import JoshCta from '../../buttons/JoshCta.astro'
 import joshWoods from '../../../assets/josh-woods.webp'
 ---
@@ -49,7 +49,7 @@ import joshWoods from '../../../assets/josh-woods.webp'
   </div>
   <div class="container">
     <CurvedText />
-    <Image src={joshWoods} quality="high" alt="Josh Nussbaum on a tree stump on a hiking trail" />
+    <Picture image={joshWoods} alt="Josh Nussbaum on a tree stump on a hiking trail" />
     <div class="container-info">
       <AnimatedCta text="Get in touch" url="/#contact" />
       <h3>Currently Using</h3>

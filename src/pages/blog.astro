@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content'
-import { Image } from 'astro:assets'
+import Picture from '../components/images/Picture.astro'
 import Layout from '../layouts/Layout.astro'
 import Header from '../components/layout/Header.astro'
 import PageHeader from '../components/text/PageHeader.astro'
@@ -37,7 +37,7 @@ const truncatedDescriptionText = createEllipsisText(newestPost!.data.description
   <section id="blog-container">
     <div class="newest-post-container">
       <a href={`/blog/${newestPost?.slug}`}>
-        <Image src={newestPost!.data.image} alt={newestPost!.data.imageAlt} />
+        <Picture image={newestPost!.data.image} alt={newestPost!.data.imageAlt} />
       </a>
       <div class="newest-post-info">
         <p>{newestPost?.data.published}</p>
@@ -52,7 +52,7 @@ const truncatedDescriptionText = createEllipsisText(newestPost!.data.description
             title={post.data.title}
             published={post.data.published}
             slug={`/blog/${post.slug}`}
-            imageSrc={post.data.image.src}
+            image={post.data.image}
             imageAlt={post.data.imageAlt}
           />
         ))

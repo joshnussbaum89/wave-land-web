@@ -1,10 +1,8 @@
 ---
-import { Image } from 'astro:assets'
-
-// Components
 import SectionHeader from '../../text/SectionHeader.astro'
 import Circle from '../../layout/Circle.astro'
 import Arrow from '../../icons/Arrow.astro'
+import Picture from '../../images/Picture.astro'
 import Dots from '../../icons/Dots.astro'
 import Close from '../../icons/Close.astro'
 
@@ -12,6 +10,7 @@ import Close from '../../icons/Close.astro'
 import moonbellyMainImage from '../../../assets/moonbelly.webp'
 import moonbellyMacbookImage from '../../../assets/macbook-moonbelly.png'
 import moonbellyIphoneImage from '../../../assets/iphone-moonbelly.png'
+import moonbellySanityImage from '../../../assets/moonbelly-sanity.png'
 
 // Supervoid TV
 import supervoidMainImage from '../../../assets/supervoid.webp'
@@ -27,9 +26,6 @@ import robbyWebbIphoneImage from '../../../assets/iphone-robby-webb.png'
 // import moonbellyStyleGuideImage from '../../../assets/moonbelly-style-guide.png'
 import supervoidStyleGuideImage from '../../../assets/supervoid-style-guide.png'
 import robbyWebbStyleGuideImage from '../../../assets/robby-webb-style-guide.png'
-
-// Sanity Images
-import moonbellySanityImage from '../../../assets/moonbelly-sanity.png'
 
 const projects = [
   {
@@ -145,7 +141,7 @@ const projects = [
             <span>0{`${project.id}`}</span>
             <h3>{project.title}</h3>
             <div class="card-image-container">
-              <Image src={project.mainImage} quality="high" alt={project.alt} />
+              <Picture class="image" image={project.mainImage} alt={project.alt} />
               <button class="josh-cta" data-project-id={project.id}>
                 Learn More
               </button>
@@ -172,7 +168,7 @@ const projects = [
             {project.caseStudy.map((section) => {
               return (
                 <div class="modal-section">
-                  <Image src={section.image} quality="high" alt={project.alt} />
+                  <Picture class="image" image={section.image} alt={project.alt} />
                   <div class="modal-info">
                     <h3>{section.title}</h3>
                     <p>{section.description}</p>
@@ -296,11 +292,7 @@ const projects = [
 
     --card-child-border-radius: calc(10px - 2px);
   }
-
-  .card-image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
+  .card-image-container .image {
     border-radius: var(--card-child-border-radius);
   }
 
@@ -392,6 +384,7 @@ const projects = [
     .modal-section {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 6rem;
     }
 
@@ -400,22 +393,19 @@ const projects = [
     }
   }
 
-  .modal-section img {
-    width: 100%;
+  .modal-section .image {
     max-width: 650px;
-    height: auto;
-    display: block;
     margin: 0 auto 2rem;
   }
 
   @media (min-width: 1024px) {
-    .modal-section img,
     .modal-section .modal-info {
       width: 50%;
+      max-width: 650px;
     }
   }
 
-  .modal-section:nth-of-type(1) img {
+  .modal-section:nth-of-type(1) .image {
     margin-bottom: 0;
   }
 
@@ -452,7 +442,9 @@ const projects = [
     color: var(--color-black);
     background-color: var(--color-light-purple);
     border: none;
-    transition: background-color var(--transition-normal), color var(--transition-normal);
+    transition:
+      background-color var(--transition-normal),
+      color var(--transition-normal);
   }
 
   .modal-buttons a:hover {
