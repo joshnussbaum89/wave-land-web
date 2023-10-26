@@ -90,14 +90,17 @@
     background-color: var(--color-white-transparent);
     backdrop-filter: saturate(180%) blur(5px);
     box-shadow: var(--box-shadow-light);
-    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s, z-index 0s 0.3s;
+    transition:
+      opacity var(--transition-normal),
+      visibility 0s var(--transition-normal),
+      z-index 0s var(--transition-normal);
     border-radius: 1rem;
   }
 
   .hamburger.active + .mobile-nav-overlay {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity var(--transition-normal);
     z-index: 3;
   }
 
@@ -112,23 +115,19 @@
   .mobile-nav-overlay ul li {
     opacity: 0;
     transform: translateY(1rem);
-    transition: all var(--transition-normal);
-  }
-
-  .mobile-nav-overlay ul li:nth-of-type(2) {
-    transition: all var(--transition-normal) 0.1s;
-  }
-
-  .mobile-nav-overlay ul li:nth-of-type(3) {
-    transition: all var(--transition-normal) 0.2s;
-  }
-
-  .mobile-nav-overlay ul li:nth-of-type(4) {
     transition: all var(--transition-normal) 0.3s;
   }
-
-  .mobile-nav-overlay ul li:nth-of-type(5) {
+  .mobile-nav-overlay ul li:nth-of-type(2) {
     transition: all var(--transition-normal) 0.4s;
+  }
+  .mobile-nav-overlay ul li:nth-of-type(3) {
+    transition: all var(--transition-normal) 0.5s;
+  }
+  .mobile-nav-overlay ul li:nth-of-type(4) {
+    transition: all var(--transition-normal) 0.6s;
+  }
+  .mobile-nav-overlay ul li:nth-of-type(5) {
+    transition: all var(--transition-normal) 0.7s;
   }
 
   .hamburger.active + .mobile-nav-overlay ul li {

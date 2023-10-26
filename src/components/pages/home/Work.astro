@@ -1,8 +1,8 @@
 ---
+import { Picture } from 'astro:assets'
 import SectionHeader from '../../text/SectionHeader.astro'
 import Circle from '../../layout/Circle.astro'
 import Arrow from '../../icons/Arrow.astro'
-import Picture from '../../images/Picture.astro'
 import Dots from '../../icons/Dots.astro'
 import Close from '../../icons/Close.astro'
 
@@ -23,7 +23,6 @@ import robbyWebbMacbookImage from '../../../assets/macbook-robby-webb.png'
 import robbyWebbIphoneImage from '../../../assets/iphone-robby-webb.png'
 
 // Style Guide Images
-// import moonbellyStyleGuideImage from '../../../assets/moonbelly-style-guide.png'
 import supervoidStyleGuideImage from '../../../assets/supervoid-style-guide.png'
 import robbyWebbStyleGuideImage from '../../../assets/robby-webb-style-guide.png'
 
@@ -141,7 +140,7 @@ const projects = [
             <span>0{`${project.id}`}</span>
             <h3>{project.title}</h3>
             <div class="card-image-container">
-              <Picture class="image" image={project.mainImage} alt={project.alt} />
+              <Picture src={project.mainImage} formats={['avif', 'webp']} alt={project.alt} />
               <button class="josh-cta" data-project-id={project.id}>
                 Learn More
               </button>
@@ -164,13 +163,13 @@ const projects = [
       return (
         <div class="modal" data-project-id={project.id}>
           <div class="modal-content">
-            <h2>{project.title}</h2>
+            <h3>{project.title}</h3>
             {project.caseStudy.map((section) => {
               return (
                 <div class="modal-section">
-                  <Picture class="image" image={section.image} alt={project.alt} />
+                  <Picture src={section.image} formats={['avif', 'webp']} alt={project.alt} />
                   <div class="modal-info">
-                    <h3>{section.title}</h3>
+                    <h4>{section.title}</h4>
                     <p>{section.description}</p>
                     <Dots />
                   </div>
@@ -289,11 +288,6 @@ const projects = [
     border-radius: 10px;
     box-shadow: var(--box-shadow-light);
     overflow: hidden;
-
-    --card-child-border-radius: calc(10px - 2px);
-  }
-  .card-image-container .image {
-    border-radius: var(--card-child-border-radius);
   }
 
   .card-image-container button {
@@ -370,8 +364,9 @@ const projects = [
     overflow-y: auto;
   }
 
-  .modal-content h2 {
+  .modal-content h3 {
     margin: 0 auto 4rem;
+    font-size: var(--size-xl);
     text-transform: none;
     text-align: center;
   }
@@ -393,28 +388,35 @@ const projects = [
     }
   }
 
-  .modal-section .image {
+  .modal-section img {
     max-width: 650px;
-    margin: 0 auto 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .modal-section:nth-of-type(1) img {
+    margin-bottom: 0;
   }
 
   @media (min-width: 1024px) {
-    .modal-section .modal-info {
-      width: 50%;
-      max-width: 650px;
+    .modal-section img {
+      margin-bottom: 0;
     }
-  }
-
-  .modal-section:nth-of-type(1) .image {
-    margin-bottom: 0;
   }
 
   .modal-info {
     text-align: center;
   }
 
-  .modal-info h3 {
+  @media (min-width: 1024px) {
+    .modal-info {
+      width: 50%;
+      max-width: 650px;
+    }
+  }
+
+  .modal-info h4 {
     margin-bottom: 2rem;
+    font-size: var(--size-lg);
   }
 
   .modal-info p {

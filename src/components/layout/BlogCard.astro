@@ -1,5 +1,5 @@
 ---
-import Picture from '../images/Picture.astro'
+import { Picture } from 'astro:assets'
 
 export interface Props {
   slug: string
@@ -14,7 +14,7 @@ const { slug, title, published, image, imageAlt } = Astro.props
 
 <div class="card">
   <a href={slug}>
-    <Picture image={image} alt={imageAlt} />
+    <Picture src={image} formats={['avif', 'webp']} alt={imageAlt} />
   </a>
   <div class="card-info">
     <p>{published}</p>
@@ -42,8 +42,6 @@ const { slug, title, published, image, imageAlt } = Astro.props
   }
 
   .card img {
-    width: 100%;
-    height: 100%;
     border-radius: 5px;
   }
 

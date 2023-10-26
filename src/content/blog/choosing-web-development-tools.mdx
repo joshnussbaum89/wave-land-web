@@ -9,8 +9,7 @@ socialImage: '/images/web-development-tools.jpg'
 layout: '../../layouts/BlogLayout.astro'
 ---
 
-import { Image } from 'astro:assets'
-import Picture from '../../components/images/Picture.astro'
+import { Picture } from 'astro:assets'
 import Link from '../../components/text/Link.astro'
 import headerImage from './images/web-development-tools.jpg'
 import typescriptImage from './images/typescript.png'
@@ -30,7 +29,8 @@ import figmaImage from './images/figma.png'
     </em>
   </p>
   <Picture
-    image={headerImage}
+    src={headerImage}
+    formats={['avif', 'webp']}
     alt="Two computer monitors with code on the screen on a desk with headphones."
     loading="eager"
   />
@@ -50,7 +50,7 @@ With that being said, I have recently decided on a few default tools that have b
 
 I am predominately a JavaScript developer. While I enjoy the forgiving nature of JavaScript from its humble beginnings as a simple scripting language, I believe <Link href="https://www.typescriptlang.org/" text="TypeScript" newWindow={true} /> is a natural and welcome evolution of the language.
 
-<Picture image={typescriptImage} alt="TypeScript meme" />
+<Picture src={typescriptImage} formats={['avif', 'webp']} alt="TypeScript meme" />
 
 Whether you are a team of one or many, TypeScript can help you organize your code better, find bugs easier, and rest easier knowing that silly `TypeError` just won't show up anymore.
 
@@ -58,7 +58,7 @@ TypeScript makes my code smarter, which enables incredible auto-complete feature
 
 `strict` mode forces me to better understand the code I am writing and displays compiler errors to guide me toward better architectural decisions. This can be a source of frustration for newer developers, as they may think "I can't get TypeScript to _work_!" but most developers eventually realize that these compiler errors are just constructive, albeit occasionally cryptic, criticisms of your code.
 
-<Picture image={typescriptErrorImage} alt="TypeScript error meme" />
+<Picture src={typescriptErrorImage} formats={['avif', 'webp']} alt="TypeScript error meme" />
 
 TypeScript is open source and closely follows the development of the JavaScript language according to
 current <Link href="https://tc39.es/" text="TC39" newWindow={true} /> specs and proposals, so it never feels like I'm straying away from browser standards.
@@ -109,7 +109,7 @@ Astro generates lightweight HTML pages by default. It allows me to build statica
 
 What I like most about Astro is its <Link href="https://docs.astro.build/en/concepts/why-astro/#server-first" text="embrace of the server" newWindow={true} />. It feels similar to building with PHP, although you are just writing good old HTML, CSS, and JavaScript in every file.
 
-<Picture class="small" image={johnSnowImage} alt="John Snow" />
+<Picture class="small" src={johnSnowImage} alt="John Snow" />
 
 My clients enjoy incredibly fast load times because every page is just HTML by default. No unnecessary client-side JavaScript has to load (like most front-end JS frameworks) just to display some static blog posts.
 
@@ -125,7 +125,7 @@ Figma is a collaborative, cloud-based design tool that is free to use and easy t
 
 I think Figma is connecting the dots in a lot of ways. For example, developers can utilize the <Link href="https://marketplace.visualstudio.com/items?itemName=figma.figma-vscode-extension" text="Figma for VS Code" newWindow={true} /> plugin to speed up their workflow. This embeds a version of Figma directly into your text editor so you can see your assets and styles without having to switch windows.
 
-<Picture image={figmaImage} alt="Figma VS code plugin" />
+<Picture src={figmaImage} formats={['avif', 'webp']} alt="Figma VS code plugin" />
 
 In recent years, Figma has started to feel like the industry standard for designing on the web. Whether you are a designer, developer, or somewhere in between, Figma is a perfect tool to get started building professional-looking designs and products.
 
