@@ -150,26 +150,28 @@
 </style>
 
 <script>
-  const body = document.querySelector('body') as HTMLBodyElement
-  const hamburger = document.getElementById('hamburger') as HTMLDivElement
-  const mobileNavItems = document.querySelectorAll('.mobile-nav-overlay li')
-  let overlayDisplayed = false
+  document.addEventListener('astro:page-load', () => {
+    const body = document.querySelector('body') as HTMLBodyElement
+    const hamburger = document.getElementById('hamburger') as HTMLDivElement
+    const mobileNavItems = document.querySelectorAll('.mobile-nav-overlay li')
+    let overlayDisplayed = false
 
-  function handleMobileNavigationOnClick() {
-    overlayDisplayed = !overlayDisplayed
-    body.setAttribute('data-overlay-displayed', `${overlayDisplayed}`)
-    hamburger.classList.toggle('active')
-  }
-
-  function handleMobileNavigationOnResize() {
-    if (window.innerWidth >= 768) {
-      overlayDisplayed = false
+    function handleMobileNavigationOnClick() {
+      overlayDisplayed = !overlayDisplayed
       body.setAttribute('data-overlay-displayed', `${overlayDisplayed}`)
-      hamburger.classList.remove('active')
+      hamburger.classList.toggle('active')
     }
-  }
 
-  hamburger.addEventListener('click', handleMobileNavigationOnClick)
-  window.addEventListener('resize', handleMobileNavigationOnResize)
-  mobileNavItems.forEach((item) => item.addEventListener('click', handleMobileNavigationOnClick))
+    function handleMobileNavigationOnResize() {
+      if (window.innerWidth >= 768) {
+        overlayDisplayed = false
+        body.setAttribute('data-overlay-displayed', `${overlayDisplayed}`)
+        hamburger.classList.remove('active')
+      }
+    }
+
+    hamburger.addEventListener('click', handleMobileNavigationOnClick)
+    window.addEventListener('resize', handleMobileNavigationOnResize)
+    mobileNavItems.forEach((item) => item.addEventListener('click', handleMobileNavigationOnClick))
+  })
 </script>

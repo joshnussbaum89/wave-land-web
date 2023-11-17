@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import { ViewTransitions } from 'astro:transitions'
 import Navigation from '../components/layout/navigation/Navigation.astro'
 import Footer from '../components/layout/Footer.astro'
 
@@ -63,7 +64,8 @@ const socialImageURL = new URL(socialImage || '/images/gradient.jpg', canonicalU
     <meta name="msapplication-TileColor" content="#000000" />
     <meta name="theme-color" content="#000000" />
 
-    <!-- Scripts -->
+    <!-- Animations -->
+    <ViewTransitions handleForms />
     <script src="../util/section-animations.ts"></script>
   </head>
 

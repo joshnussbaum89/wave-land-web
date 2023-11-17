@@ -34,4 +34,16 @@ const { class: className } = Astro.props
       min-height: calc(100vh - 23rem);
     }
   }
+
+  /***
+
+    This is a temporary fix for Safari + Firefox.
+    The ViewTransition API only really works in Chrome so, for now we're keeping the header visible.
+    The .site-section class is needed for the scrolling animation.
+
+  ***/
+
+  .header.site-section {
+    opacity: 1;
+  }
 </style>
